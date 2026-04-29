@@ -1,0 +1,83 @@
+<svg width="500" height="500" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="ringA" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#A7F3D0"/>
+      <stop offset="100%" stop-color="#064E3B"/>
+    </radialGradient>
+    <radialGradient id="ringB" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#6EE7B7"/>
+      <stop offset="100%" stop-color="#047857"/>
+    </radialGradient>
+    <radialGradient id="ringC" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#D1FAE5"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </radialGradient>
+    <radialGradient id="person" cx="35%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#ECFDF5"/>
+      <stop offset="50%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#065F46"/>
+    </radialGradient>
+    <radialGradient id="star" cx="30%" cy="25%" r="70%">
+      <stop offset="0%" stop-color="#FEF9C3"/>
+      <stop offset="100%" stop-color="#92400E"/>
+    </radialGradient>
+    <filter id="shadow" x="-25%" y="-25%" width="150%" height="150%">
+      <feDropShadow dx="0" dy="10" stdDeviation="16" flood-color="#064E3B" flood-opacity="0.22"/>
+    </filter>
+  </defs>
+
+  <!-- Ground shadow -->
+  <ellipse cx="250" cy="462" rx="135" ry="14" fill="#064E3B" opacity="0.1"/>
+
+  <g filter="url(#shadow)">
+    <!-- OUTER RING — side face -->
+    <path d="M 58,308 A 192,52 0 0,0 442,308 L 442,338 A 192,52 0 0,1 58,338 Z" fill="#047857" opacity="0.65"/>
+    <!-- OUTER RING — top face -->
+    <ellipse cx="250" cy="308" rx="192" ry="52" fill="url(#ringA)"/>
+    <ellipse cx="250" cy="308" rx="130" ry="35" fill="url(#ringB)"/>
+
+    <!-- MIDDLE RING — side face -->
+    <path d="M 100,248 A 150,40 0 0,0 400,248 L 400,275 A 150,40 0 0,1 100,275 Z" fill="#059669" opacity="0.65"/>
+    <!-- MIDDLE RING — top face -->
+    <ellipse cx="250" cy="248" rx="150" ry="40" fill="url(#ringB)"/>
+    <ellipse cx="250" cy="248" rx="88" ry="23" fill="url(#ringC)"/>
+
+    <!-- PERSON DISC — side face -->
+    <path d="M 162,196 A 88,23 0 0,0 338,196 L 338,220 A 88,23 0 0,1 162,220 Z" fill="#065F46" opacity="0.6"/>
+    <!-- PERSON DISC — top face -->
+    <ellipse cx="250" cy="196" rx="88" ry="23" fill="url(#ringC)"/>
+
+    <!-- PERSON FIGURE (head + body, floating above center) -->
+    <!-- Body (behind head, drawn first) -->
+    <ellipse cx="250" cy="164" rx="32" ry="16" fill="url(#person)"/>
+    <!-- Head -->
+    <circle cx="250" cy="138" r="30" fill="url(#person)"/>
+  </g>
+
+  <!-- Specular highlights on rings -->
+  <ellipse cx="234" cy="303" rx="115" ry="28" fill="rgba(255,255,255,0.18)"/>
+  <ellipse cx="236" cy="244" rx="78" ry="18" fill="rgba(255,255,255,0.18)"/>
+  <ellipse cx="238" cy="193" rx="48" ry="12" fill="rgba(255,255,255,0.22)"/>
+  <!-- Head specular -->
+  <ellipse cx="240" cy="128" rx="16" ry="10" fill="rgba(255,255,255,0.28)"/>
+
+  <!-- PROFILE DOTS on outer ring (many users = broad audience) -->
+  <circle cx="108" cy="306" r="11" fill="url(#person)" opacity="0.9"/>
+  <circle cx="152" cy="283" r="11" fill="url(#person)" opacity="0.9"/>
+  <circle cx="202" cy="270" r="11" fill="url(#person)" opacity="0.9"/>
+  <circle cx="250" cy="267" r="11" fill="url(#person)" opacity="0.9"/>
+  <circle cx="298" cy="270" r="11" fill="url(#person)" opacity="0.9"/>
+  <circle cx="348" cy="283" r="11" fill="url(#person)" opacity="0.9"/>
+  <circle cx="392" cy="306" r="11" fill="url(#person)" opacity="0.9"/>
+  <circle cx="155" cy="330" r="11" fill="url(#person)" opacity="0.38"/>
+  <circle cx="250" cy="340" r="11" fill="url(#person)" opacity="0.38"/>
+  <circle cx="345" cy="330" r="11" fill="url(#person)" opacity="0.38"/>
+
+  <!-- PROFILE DOTS on middle ring (segment) -->
+  <circle cx="142" cy="246" r="11" fill="url(#person)"/>
+  <circle cx="250" cy="232" r="11" fill="url(#person)"/>
+  <circle cx="358" cy="246" r="11" fill="url(#person)"/>
+
+  <!-- PERSONALIZATION STAR — attached to the person figure (top-right) -->
+  <path d="M286,104 L289,113 L299,116 L289,119 L286,128 L283,119 L273,116 L283,113 Z" fill="url(#star)"/>
+</svg>

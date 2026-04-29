@@ -1,0 +1,101 @@
+---
+import Base from '@/templates/Base.astro';
+import { AppConfig } from '@/utils/AppConfig';
+
+const workEntries = [
+  {
+    company: 'Freelance',
+    role: 'Geospatial Data Engineer · ML Engineer · AI Engineer',
+    dateStart: 'May 2026',
+    dateEnd: 'Present',
+    bullets: [
+      'Geospatial data engineering and analysis-ready cloud-optimised dataset pipelines',
+      'Production ML system design and deployment',
+      'LLM / AI engineering and agentic systems',
+    ],
+  },
+  {
+    company: 'New Work SE (XING)',
+    role: 'Data Scientist — AI Engineer',
+    dateStart: 'Mar 2025',
+    dateEnd: 'Mar 2026',
+    bullets: [
+      'Developed end-to-end LLM-powered recruiting agent from concept to production with RAG retrieval, reranking, prompting, tracing and guardrails',
+      'Reduced recruiter review load by narrowing 20M profiles to 200 prescreened, then 10 interested applicants per posting via personalised outreach',
+    ],
+  },
+  {
+    company: 'New Work SE (XING Marketing Solutions)',
+    role: 'ML Engineer',
+    dateStart: 'Apr 2023',
+    dateEnd: 'Mar 2025',
+    bullets: [
+      'Replaced logistic regression baseline with deep neural network for ad targeting, achieving 10–15% CTR improvement',
+      'Shipped LLM ad copy generation pipeline integrated into the production ad stack',
+      'Built user-level personalisation features with custom embeddings',
+    ],
+  },
+  {
+    company: 'Max-Planck-Institut für Meteorologie',
+    role: 'PostDoc Researcher',
+    dateStart: 'Jan 2021',
+    dateEnd: 'Mar 2023',
+    bullets: [
+      'Analysed COVID-19 lockdown effects on atmospheric CO₂ using observational and model data',
+    ],
+  },
+  {
+    company: 'Max-Planck-Institut für Meteorologie',
+    role: 'PhD Researcher',
+    dateStart: 'Jan 2018',
+    dateEnd: 'Dec 2020',
+    bullets: [
+      'Developed decadal climate prediction system processing 40TB+ ensemble datasets',
+      'Created climpred, an open-source Python library for probabilistic forecast verification',
+      'Published 3 first-author peer-reviewed papers in high-impact climate journals',
+    ],
+  },
+];
+---
+
+<Base head={{ title: `CV | ${AppConfig.title}`, description: 'CV of Aaron Spring.' }}>
+  <div class="mx-auto max-w-screen-lg px-3 py-6">
+    <div class="mb-8">
+      <h1 class="text-3xl font-bold text-white">
+        CV <span class="bg-gradient-to-br from-sky-500 to-cyan-400 bg-clip-text text-transparent">/ Work History</span>
+      </h1>
+    </div>
+    <div class="flex flex-col gap-6">
+      {workEntries.map((entry) => (
+        <div class="rounded-lg border border-slate-700 bg-slate-800 p-6">
+          <div class="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
+            <div>
+              <h2 class="text-lg font-semibold text-gray-100">{entry.company}</h2>
+              <p class="text-sm italic text-cyan-400">{entry.role}</p>
+            </div>
+            <p class="shrink-0 text-sm text-gray-400">
+              {entry.dateStart} – {entry.dateEnd}
+            </p>
+          </div>
+          <ul class="mt-3 list-disc space-y-1 pl-5 text-sm text-gray-300">
+            {entry.bullets.map((b) => <li>{b}</li>)}
+          </ul>
+        </div>
+      ))}
+    </div>
+    <div class="mt-10 flex justify-center">
+      <a
+        href="/cv_aaron_spring_2026_geo.pdf"
+        download
+        class="inline-flex items-center gap-2 rounded-lg bg-cyan-500 px-6 py-3 text-sm font-semibold text-slate-900 transition hover:bg-cyan-400"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+          <polyline points="7 10 12 15 17 10"/>
+          <line x1="12" y1="15" x2="12" y2="3"/>
+        </svg>
+        Download CV (PDF)
+      </a>
+    </div>
+  </div>
+</Base>

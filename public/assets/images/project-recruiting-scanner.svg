@@ -1,0 +1,63 @@
+<svg width="500" height="500" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="lensFrame" cx="35%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#BEF264"/>
+      <stop offset="100%" stop-color="#1A2E05"/>
+    </radialGradient>
+    <radialGradient id="glass" cx="35%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#ECFCCB"/>
+      <stop offset="65%" stop-color="#84CC16"/>
+      <stop offset="100%" stop-color="#3F6212"/>
+    </radialGradient>
+    <linearGradient id="handle" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#A3E635"/>
+      <stop offset="100%" stop-color="#1A2E05"/>
+    </linearGradient>
+    <radialGradient id="pDot" cx="35%" cy="30%" r="65%">
+      <stop offset="0%" stop-color="#F7FEE7"/>
+      <stop offset="100%" stop-color="#3F6212"/>
+    </radialGradient>
+    <radialGradient id="pSel" cx="30%" cy="25%" r="70%">
+      <stop offset="0%" stop-color="#FEF9C3"/>
+      <stop offset="100%" stop-color="#B45309"/>
+    </radialGradient>
+    <filter id="shadow" x="-25%" y="-25%" width="150%" height="150%">
+      <feDropShadow dx="0" dy="12" stdDeviation="18" flood-color="#1A2E05" flood-opacity="0.25"/>
+    </filter>
+    <clipPath id="glassClip">
+      <circle cx="205" cy="192" r="126"/>
+    </clipPath>
+  </defs>
+
+  <ellipse cx="268" cy="462" rx="145" ry="14" fill="#1A2E05" opacity="0.1"/>
+
+  <g filter="url(#shadow)">
+    <rect x="295" y="290" width="52" height="162" rx="22" transform="rotate(42, 321, 371)" fill="url(#handle)"/>
+    <rect x="300" y="295" width="14" height="150" rx="7" transform="rotate(42, 307, 370)" fill="rgba(255,255,255,0.16)"/>
+    <circle cx="205" cy="192" r="158" fill="url(#lensFrame)"/>
+    <circle cx="205" cy="192" r="126" fill="url(#glass)"/>
+  </g>
+
+  <path d="M 90,118 A 158,158 0 0,1 320,118" stroke="rgba(255,255,255,0.28)" stroke-width="14" fill="none" stroke-linecap="round"/>
+  <ellipse cx="177" cy="152" rx="66" ry="42" fill="rgba(255,255,255,0.22)" transform="rotate(-12,177,152)"/>
+
+  <circle cx="135" cy="148" r="14" fill="url(#pDot)"/>
+  <circle cx="205" cy="148" r="14" fill="url(#pDot)"/>
+  <circle cx="275" cy="148" r="14" fill="url(#pDot)"/>
+  <circle cx="135" cy="192" r="14" fill="url(#pDot)"/>
+  <circle cx="205" cy="192" r="16" fill="url(#pSel)"/>
+  <circle cx="275" cy="192" r="14" fill="url(#pDot)"/>
+  <circle cx="135" cy="236" r="14" fill="url(#pDot)"/>
+  <circle cx="205" cy="236" r="14" fill="url(#pDot)"/>
+  <circle cx="275" cy="236" r="16" fill="url(#pSel)"/>
+
+  <path d="M197,192 L202,198 L215,184" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M267,236 L272,242 L285,228" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+
+  <circle cx="135" cy="140" r="5" fill="rgba(255,255,255,0.4)"/>
+  <circle cx="205" cy="140" r="5" fill="rgba(255,255,255,0.4)"/>
+  <circle cx="275" cy="140" r="5" fill="rgba(255,255,255,0.4)"/>
+  <circle cx="135" cy="184" r="5" fill="rgba(255,255,255,0.4)"/>
+  <circle cx="135" cy="228" r="5" fill="rgba(255,255,255,0.4)"/>
+  <circle cx="205" cy="228" r="5" fill="rgba(255,255,255,0.4)"/>
+</svg>

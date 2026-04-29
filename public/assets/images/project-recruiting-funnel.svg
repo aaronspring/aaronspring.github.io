@@ -1,0 +1,62 @@
+<svg width="500" height="500" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="funnel" x1="100" y1="80" x2="380" y2="460" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#D9F99D"/>
+      <stop offset="50%" stop-color="#65A30D"/>
+      <stop offset="100%" stop-color="#1A2E05"/>
+    </linearGradient>
+    <radialGradient id="rim" cx="40%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#ECFCCB"/>
+      <stop offset="100%" stop-color="#3F6212"/>
+    </radialGradient>
+    <radialGradient id="person" cx="35%" cy="30%" r="65%">
+      <stop offset="0%" stop-color="#F7FEE7"/>
+      <stop offset="100%" stop-color="#3F6212"/>
+    </radialGradient>
+    <radialGradient id="star" cx="30%" cy="25%" r="70%">
+      <stop offset="0%" stop-color="#FFFBEB"/>
+      <stop offset="100%" stop-color="#92400E"/>
+    </radialGradient>
+    <filter id="shadow" x="-25%" y="-25%" width="150%" height="150%">
+      <feDropShadow dx="0" dy="12" stdDeviation="18" flood-color="#1A2E05" flood-opacity="0.22"/>
+    </filter>
+  </defs>
+
+  <ellipse cx="250" cy="462" rx="115" ry="13" fill="#3F6212" opacity="0.1"/>
+
+  <g filter="url(#shadow)">
+    <ellipse cx="250" cy="108" rx="188" ry="26" fill="url(#rim)"/>
+    <path d="M 62,108 L 438,108 L 298,268 L 202,268 Z" fill="url(#funnel)"/>
+    <path d="M 202,268 L 298,268 L 280,350 L 220,350 Z" fill="url(#funnel)"/>
+    <rect x="220" y="350" width="60" height="95" rx="10" fill="url(#funnel)"/>
+    <ellipse cx="250" cy="445" rx="30" ry="7" fill="#1A2E05" opacity="0.8"/>
+  </g>
+
+  <ellipse cx="232" cy="104" rx="128" ry="14" fill="rgba(255,255,255,0.28)"/>
+  <path d="M 62,108 L 438,108 L 425,119 L 75,119 Z" fill="rgba(255,255,255,0.14)"/>
+  <path d="M 62,108 L 148,108 L 235,268 L 202,268 Z" fill="rgba(255,255,255,0.06)"/>
+  <rect x="222" y="352" width="14" height="91" rx="5" fill="rgba(255,255,255,0.14)"/>
+
+  <circle cx="115" cy="148" r="10" fill="url(#person)"/>
+  <circle cx="148" cy="166" r="10" fill="url(#person)"/>
+  <circle cx="185" cy="150" r="10" fill="url(#person)"/>
+  <circle cx="218" cy="166" r="10" fill="url(#person)"/>
+  <circle cx="250" cy="150" r="10" fill="url(#person)"/>
+  <circle cx="282" cy="166" r="10" fill="url(#person)"/>
+  <circle cx="315" cy="150" r="10" fill="url(#person)"/>
+  <circle cx="352" cy="166" r="10" fill="url(#person)"/>
+  <circle cx="385" cy="148" r="10" fill="url(#person)"/>
+  <circle cx="128" cy="198" r="10" fill="url(#person)" opacity="0.68"/>
+  <circle cx="165" cy="213" r="10" fill="url(#person)" opacity="0.68"/>
+  <circle cx="208" cy="200" r="10" fill="url(#person)" opacity="0.68"/>
+  <circle cx="250" cy="213" r="10" fill="url(#person)" opacity="0.68"/>
+  <circle cx="292" cy="200" r="10" fill="url(#person)" opacity="0.68"/>
+  <circle cx="335" cy="213" r="10" fill="url(#person)" opacity="0.68"/>
+  <circle cx="372" cy="198" r="10" fill="url(#person)" opacity="0.68"/>
+
+  <circle cx="228" cy="296" r="11" fill="url(#person)"/>
+  <circle cx="250" cy="310" r="11" fill="url(#person)"/>
+  <circle cx="272" cy="296" r="11" fill="url(#person)"/>
+
+  <path d="M250,390 L256,408 L275,408 L260,420 L266,438 L250,427 L234,438 L240,420 L225,408 L244,408 Z" fill="url(#star)"/>
+</svg>
