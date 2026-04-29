@@ -43,7 +43,7 @@ const Hero = () => (
               alt="GitHub"
             />
           </a>
-          <a href="https://www.linkedin.com/in/aaronspring/" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.linkedin.com/in/springaaron/" target="_blank" rel="noopener noreferrer">
             <HeroSocial
               src="/assets/images/linkedin-icon.png"
               alt="LinkedIn"
