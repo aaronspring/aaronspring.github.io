@@ -20,7 +20,7 @@ const Hero = () => (
           analysis-ready climate datasets.{' '}
           <a
             className="text-cyan-400 hover:underline"
-            href="/cv_aaron_spring_2026_geo.pdf"
+            href="/cv_aaron_spring_2026.pdf"
             target="_blank"
           >
             Download CV ↗
