@@ -27,6 +27,16 @@ const ProjectList = () => (
           { label: 'AWS S3', color: ColorTags.INDIGO },
           { label: 'Python', color: ColorTags.VIOLET },
         ]}
+        links={[
+          {
+            label: 'Marketplace listing',
+            href: 'https://app.earthmover.io/marketplace/6a18ae1ba1c8feafd01f2b76?tab=dataset&path=pressure%2Fspatial',
+          },
+          {
+            label: 'Blog post',
+            href: 'https://www.earthmover.io/blog/announcing-data-marketplace/',
+          },
+        ]}
       />
       <ProjectCard
         name="AI Recruiting Agent"

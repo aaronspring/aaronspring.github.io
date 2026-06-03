@@ -2,15 +2,18 @@ import { ColorTags, Tags } from 'astro-boilerplate-components';
 
 type TagEntry = { label: string; color: (typeof ColorTags)[keyof typeof ColorTags] };
 
+type LinkEntry = { label: string; href: string };
+
 type Props = {
   name: string;
   challenge: string;
   solution: string;
   img: { src: string; alt: string };
   tags: TagEntry[];
+  links?: LinkEntry[];
 };
 
-const ProjectCard = ({ name, challenge, solution, img, tags }: Props) => (
+const ProjectCard = ({ name, challenge, solution, img, tags, links }: Props) => (
   <div className="flex flex-col gap-6 rounded-md border border-slate-700 bg-slate-800 p-6 md:flex-row">
     <div className="w-full shrink-0 md:w-36">
       <img
@@ -41,6 +44,21 @@ const ProjectCard = ({ name, challenge, solution, img, tags }: Props) => (
           </Tags>
         ))}
       </div>
+      {links && links.length > 0 && (
+        <div className="flex flex-wrap gap-4">
+          {links.map(({ label, href }) => (
+            <a
+              key={href}
+              className="text-sm font-medium text-cyan-400 hover:text-cyan-300"
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {label} »
+            </a>
+          ))}
+        </div>
+      )}
     </div>
   </div>
 );
