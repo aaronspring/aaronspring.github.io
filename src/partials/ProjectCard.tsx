@@ -37,13 +37,6 @@ const ProjectCard = ({ name, challenge, solution, img, tags, links }: Props) => 
         </p>
         <p className="mt-1 text-sm text-gray-300">{solution}</p>
       </div>
-      <div className="flex flex-wrap gap-2">
-        {tags.map(({ label, color }) => (
-          <Tags key={label} color={color}>
-            {label}
-          </Tags>
-        ))}
-      </div>
       {links && links.length > 0 && (
         <div className="flex flex-wrap gap-4">
           {links.map(({ label, href }) => (
@@ -59,6 +52,13 @@ const ProjectCard = ({ name, challenge, solution, img, tags, links }: Props) => 
           ))}
         </div>
       )}
+      <div className="flex flex-wrap gap-2">
+        {tags.map(({ label, color }) => (
+          <Tags key={label} color={color}>
+            {label}
+          </Tags>
+        ))}
+      </div>
     </div>
   </div>
 );
