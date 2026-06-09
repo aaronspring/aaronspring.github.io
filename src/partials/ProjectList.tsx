@@ -98,6 +98,12 @@ const ProjectList = () => (
           { label: 'Data Curation', color: ColorTags.YELLOW },
           { label: 'Python', color: ColorTags.VIOLET },
         ]}
+        links={[
+          {
+            label: 'Challenge website',
+            href: 'https://s2s-ai-challenge.github.io/',
+          },
+        ]}
       />
     </div>
   </Section>

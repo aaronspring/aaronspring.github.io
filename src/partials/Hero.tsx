@@ -16,7 +16,7 @@ const Hero = () => (
       description={
         <>
           Freelance ML engineer, AI engineer and geospatial data engineer 
-          based in Hamburg. I build production ML systems, LLM pipelines and
+          based in Hamburg. I build production ML systems, LLM-powered applications and
           analysis-ready climate datasets.{' '}
           <a
             className="text-cyan-400 hover:underline"
