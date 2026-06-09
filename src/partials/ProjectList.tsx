@@ -12,9 +12,9 @@ const ProjectList = () => (
   >
     <div className="flex flex-col gap-6">
       <ProjectCard
-        name="ERA5 ARCO Dataset"
-        challenge="Access the most recent ERA5 reanalysis data for AIFS model training as well as historical analysis for paying B2B customers — with data freshness guarantees and reliable access SLAs."
-        solution="Built an analysis-ready cloud-optimised (ARCO) ERA5 dataset on Earthmover Arraylake leveraging Icechunk for ACID transactions and an attached SLA covering data freshness and availability."
+        name="ARCO ERA5"
+        challenge="Access the best climate reanalysis based on the most recent available data for maps and time-series use-cases."
+        solution="Built an analysis-ready cloud-optimised (ARCO) ERA5 dataset on Earthmover Arraylake with dual chunking optimized for maps and time-series applications, leveraging Icechunk for ACID transactions and an attached SLA covering data freshness and availability."
         img={{
           src: '/assets/images/project-climate-cloud.svg',
           alt: 'Climate array data in the cloud',
@@ -63,8 +63,8 @@ const ProjectList = () => (
       />
       <ProjectCard
         name="Ad Personalisation"
-        challenge="Which user sees which ad maximizing for revenue?"
-        solution="Logistic regression baseline for broad targeting; deep neural network for user-level personalisation delivering 10–15% CTR improvement. LLM-generated ad copy pipeline shipped into the production ad stack."
+        challenge="Maximize revenue per impression by selecting the ad most relevant for the user."
+        solution="Improved CTR and revenue-per-impression by 2% by upgrading from logistic regression to deep neural network enabling ad-user personalisation."
         img={{ src: '/assets/images/project-ad-personalization.svg', alt: 'Ad user personalization' }}
         tags={[
           { label: 'Ad Tech', color: ColorTags.TEAL },
