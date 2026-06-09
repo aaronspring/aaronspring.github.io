@@ -32,7 +32,7 @@ const Hero = () => (
       }
       avatar={
         <img
-          className="h-80 w-64 rounded-xl object-cover"
+          className="h-52 w-52 rounded-full object-cover border-4 border-cyan-400"
           src="/assets/images/profile.jpeg"
           alt="Aaron Spring"
           loading="lazy"
