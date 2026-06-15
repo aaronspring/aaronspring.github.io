@@ -24,6 +24,21 @@ const {
     <meta name='author' content={AppConfig.author} />
 
     <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+    <script is:inline>
+      // Include the #anchor in the recorded path so in-page sections
+      // (e.g. /#value, /#projects) show up as distinct pages in GoatCounter.
+      window.goatcounter = {
+        path: function (p) {
+          return p + location.hash;
+        },
+      };
+      // Re-count whenever the hash changes (anchor navigation within a page).
+      addEventListener('hashchange', function () {
+        window.goatcounter.count({
+          path: location.pathname + location.search + location.hash,
+        });
+      });
+    </script>
     <script data-goatcounter="https://aaronspring.goatcounter.com/count"
             async src="//gc.zgo.at/count.js"></script>
   </head>
