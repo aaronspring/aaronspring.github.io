@@ -2,6 +2,7 @@
 import { CTA } from '@/partials/CTA';
 import { Hero } from '@/partials/Hero';
 import { ProjectList } from '@/partials/ProjectList';
+import { ValueProp } from '@/partials/ValueProp';
 import Base from '@/templates/Base.astro';
 import { AppConfig } from '@/utils/AppConfig';
 
@@ -12,6 +13,9 @@ const { description } = AppConfig;
 <Base head={{ title, description }}>
   <Hero />
   <CTA />
+  <div id="value">
+    <ValueProp />
+  </div>
   <div id="projects">
     <ProjectList />
   </div>

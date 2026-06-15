@@ -24,6 +24,7 @@ const Navbar = () => (
 
       <NavMenu>
         <NavMenuItem href="/work/">CV</NavMenuItem>
+        <NavMenuItem href="/#value">Value</NavMenuItem>
         <NavMenuItem href="/#projects">Projects</NavMenuItem>
       </NavMenu>
     </NavbarTwoColumns>
