@@ -1,0 +1,164 @@
+---
+import Base from '@/templates/Base.astro';
+import { AppConfig } from '@/utils/AppConfig';
+---
+
+<Base head={{ title: `Datenschutzerklärung | ${AppConfig.title}`, description: 'Datenschutzerklärung dieser Website.' }}>
+  <div class="mx-auto max-w-screen-md px-3 py-6">
+    <h1 class="mb-8 text-3xl font-bold text-white">
+      Datenschutz<span class="bg-gradient-to-br from-sky-500 to-cyan-400 bg-clip-text text-transparent">erklärung</span>
+    </h1>
+
+    <div class="space-y-8 text-gray-300">
+      <section>
+        <h2 class="mb-2 text-lg font-semibold text-gray-100">1. Verantwortlicher</h2>
+        <p>
+          Verantwortlich für die Datenverarbeitung auf dieser Website im Sinne
+          der Datenschutz-Grundverordnung (DSGVO) ist:
+        </p>
+        <p class="mt-2">
+          Aaron Spring<br />
+          E-Mail:
+          <a class="text-cyan-400 hover:text-cyan-300" href="mailto:draaronspring@proton.me">draaronspring@proton.me</a>
+        </p>
+      </section>
+
+      <section>
+        <h2 class="mb-2 text-lg font-semibold text-gray-100">2. Hosting (GitHub Pages)</h2>
+        <p>
+          Diese Website wird bei GitHub Pages gehostet, einem Dienst der GitHub,
+          Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA
+          (ein Unternehmen von Microsoft). Beim Aufruf der Website werden
+          technisch notwendige Daten – insbesondere die IP-Adresse – an die
+          Server von GitHub übertragen und dort in Server-Logfiles verarbeitet.
+          Dies ist erforderlich, um die Website sicher und stabil auszuliefern.
+        </p>
+        <p class="mt-2">
+          Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse
+          an einer sicheren und effizienten Bereitstellung des Onlineangebots).
+          Die Datenübermittlung in die USA erfolgt auf Grundlage der
+          Standardvertragsklauseln der EU-Kommission. Weitere Informationen:
+          <a class="text-cyan-400 hover:text-cyan-300" href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener noreferrer">GitHub Privacy Statement</a>.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="mb-2 text-lg font-semibold text-gray-100">3. Server-Logfiles</h2>
+        <p>
+          Der Hosting-Anbieter erhebt und speichert automatisch Informationen in
+          sogenannten Server-Logfiles, die dein Browser automatisch übermittelt.
+          Dies sind insbesondere:
+        </p>
+        <ul class="mt-3 list-disc space-y-1 pl-5">
+          <li>Browsertyp und Browserversion</li>
+          <li>verwendetes Betriebssystem</li>
+          <li>Referrer-URL</li>
+          <li>Datum und Uhrzeit der Serveranfrage</li>
+          <li>IP-Adresse</li>
+        </ul>
+        <p class="mt-2">
+          Eine Zusammenführung dieser Daten mit anderen Datenquellen wird nicht
+          vorgenommen. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="mb-2 text-lg font-semibold text-gray-100">4. SSL-/TLS-Verschlüsselung</h2>
+        <p>
+          Diese Seite nutzt aus Sicherheitsgründen eine SSL- bzw.
+          TLS-Verschlüsselung. Eine verschlüsselte Verbindung erkennst du an
+          „https://“ in der Adresszeile deines Browsers.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="mb-2 text-lg font-semibold text-gray-100">5. Reichweitenmessung mit GoatCounter</h2>
+        <p>
+          Zur statistischen Auswertung der Zugriffe setze ich GoatCounter ein,
+          eine datensparsame und quelloffene Analyse-Software
+          (Anbieter: Martin Tournoij / GoatCounter, <a class="text-cyan-400 hover:text-cyan-300" href="https://www.goatcounter.com" target="_blank" rel="noopener noreferrer">goatcounter.com</a>).
+        </p>
+        <p class="mt-2">
+          GoatCounter <strong>setzt keine Cookies</strong> und speichert keine
+          personenbezogenen Daten dauerhaft. Es findet <strong>kein
+          Tracking über mehrere Websites hinweg</strong> statt. Zur Zählung
+          eindeutiger Besuche wird die IP-Adresse ausschließlich temporär und in
+          Verbindung mit dem User-Agent zur Bildung eines nicht rückführbaren
+          Hashwertes verwendet; dieser wird nach spätestens acht Stunden
+          verworfen. Es werden lediglich aggregierte Kennzahlen wie aufgerufene
+          Seiten, Referrer, ungefähres Herkunftsland, Browser und Gerätetyp
+          erfasst.
+        </p>
+        <p class="mt-2">
+          Da GoatCounter keine Cookies verwendet und keine dem Endgerät
+          zuzuordnenden Informationen speichert oder ausliest, ist keine
+          Einwilligung nach § 25 TDDDG erforderlich. Rechtsgrundlage der
+          Verarbeitung ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an
+          einer datenschutzfreundlichen Analyse der Websitenutzung).
+        </p>
+      </section>
+
+      <section>
+        <h2 class="mb-2 text-lg font-semibold text-gray-100">6. Kontaktaufnahme</h2>
+        <p>
+          Wenn du mich per E-Mail oder über verlinkte Profile (z. B. LinkedIn,
+          GitHub) kontaktierst, werden die von dir übermittelten Daten zur
+          Bearbeitung deiner Anfrage verarbeitet. Rechtsgrundlage ist
+          Art. 6 Abs. 1 lit. b DSGVO (vorvertragliche Maßnahmen) bzw.
+          Art. 6 Abs. 1 lit. f DSGVO. Die Daten werden gelöscht, sobald sie für
+          die Zweckerreichung nicht mehr erforderlich sind.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="mb-2 text-lg font-semibold text-gray-100">7. Externe Links</h2>
+        <p>
+          Diese Website enthält Links zu externen Diensten (u. a. GitHub,
+          LinkedIn, Earthmover). Beim Anklicken solcher Links gelangst du auf
+          Seiten Dritter, für deren Datenverarbeitung die jeweiligen Anbieter
+          verantwortlich sind. Es werden keine Inhalte dieser Dienste
+          automatisch nachgeladen oder eingebettet.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="mb-2 text-lg font-semibold text-gray-100">8. Deine Rechte</h2>
+        <p>Dir stehen als betroffene Person folgende Rechte zu:</p>
+        <ul class="mt-3 list-disc space-y-1 pl-5">
+          <li>Recht auf Auskunft (Art. 15 DSGVO)</li>
+          <li>Recht auf Berichtigung (Art. 16 DSGVO)</li>
+          <li>Recht auf Löschung (Art. 17 DSGVO)</li>
+          <li>Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO)</li>
+          <li>Recht auf Datenübertragbarkeit (Art. 20 DSGVO)</li>
+          <li>Widerspruchsrecht gegen die Verarbeitung (Art. 21 DSGVO)</li>
+        </ul>
+        <p class="mt-2">
+          Zur Ausübung dieser Rechte genügt eine formlose Mitteilung an die oben
+          genannte E-Mail-Adresse.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="mb-2 text-lg font-semibold text-gray-100">9. Beschwerderecht bei der Aufsichtsbehörde</h2>
+        <p>
+          Unbeschadet anderer Rechtsbehelfe steht dir ein Beschwerderecht bei
+          einer Datenschutz-Aufsichtsbehörde zu, wenn du der Ansicht bist, dass
+          die Verarbeitung deiner personenbezogenen Daten gegen die DSGVO
+          verstößt (Art. 77 DSGVO).
+        </p>
+      </section>
+
+      <section>
+        <h2 class="mb-2 text-lg font-semibold text-gray-100">10. Aktualität</h2>
+        <p>
+          Diese Datenschutzerklärung wird bei Bedarf angepasst, um sie an
+          geänderte Rechtslage oder Änderungen der Website anzupassen.
+        </p>
+      </section>
+
+      <p class="pt-4">
+        <a class="text-cyan-400 hover:text-cyan-300" href="/impressum">→ Impressum / Kontakt</a>
+      </p>
+    </div>
+  </div>
+</Base>

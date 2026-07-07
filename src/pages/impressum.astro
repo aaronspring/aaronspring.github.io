@@ -1,0 +1,72 @@
+---
+import Base from '@/templates/Base.astro';
+import { AppConfig } from '@/utils/AppConfig';
+---
+
+<Base head={{ title: `Impressum | ${AppConfig.title}`, description: 'Impressum und Kontakt.' }}>
+  <div class="mx-auto max-w-screen-md px-3 py-6">
+    <h1 class="mb-8 text-3xl font-bold text-white">
+      Impressum <span class="bg-gradient-to-br from-sky-500 to-cyan-400 bg-clip-text text-transparent">/ Kontakt</span>
+    </h1>
+
+    <div class="space-y-6 text-gray-300">
+      <section>
+        <h2 class="mb-2 text-lg font-semibold text-gray-100">Verantwortlich für den Inhalt</h2>
+        <p>Aaron Spring</p>
+      </section>
+
+      <section>
+        <h2 class="mb-2 text-lg font-semibold text-gray-100">Kontakt</h2>
+        <p>
+          Für Anfragen erreichst du mich am einfachsten per E-Mail oder über die
+          folgenden Profile:
+        </p>
+        <ul class="mt-3 list-disc space-y-1 pl-5">
+          <li>
+            E-Mail:
+            <a class="text-cyan-400 hover:text-cyan-300" href="mailto:draaronspring@proton.me">draaronspring@proton.me</a>
+          </li>
+          <li>
+            LinkedIn:
+            <a class="text-cyan-400 hover:text-cyan-300" href="https://www.linkedin.com/in/springaaron/" target="_blank" rel="noopener noreferrer">linkedin.com/in/springaaron</a>
+          </li>
+          <li>
+            GitHub:
+            <a class="text-cyan-400 hover:text-cyan-300" href="https://github.com/aaronspring" target="_blank" rel="noopener noreferrer">github.com/aaronspring</a>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="mb-2 text-lg font-semibold text-gray-100">Haftung für Inhalte</h2>
+        <p>
+          Die Inhalte dieser Seiten wurden mit größtmöglicher Sorgfalt erstellt.
+          Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte kann
+          jedoch keine Gewähr übernommen werden.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="mb-2 text-lg font-semibold text-gray-100">Haftung für Links</h2>
+        <p>
+          Diese Seite enthält Links zu externen Websites Dritter, auf deren
+          Inhalte kein Einfluss besteht. Für die Inhalte der verlinkten Seiten
+          ist stets der jeweilige Anbieter oder Betreiber verantwortlich.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="mb-2 text-lg font-semibold text-gray-100">Urheberrecht</h2>
+        <p>
+          Die durch den Seitenbetreiber erstellten Inhalte und Werke auf diesen
+          Seiten unterliegen dem deutschen Urheberrecht. Beiträge Dritter sind
+          als solche gekennzeichnet.
+        </p>
+      </section>
+
+      <p class="pt-4">
+        <a class="text-cyan-400 hover:text-cyan-300" href="/datenschutz">→ Datenschutzerklärung</a>
+      </p>
+    </div>
+  </div>
+</Base>
