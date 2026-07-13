@@ -77,7 +77,6 @@ const ProjectList = () => (
           { label: 'ML', color: ColorTags.BLUE },
           { label: 'scikit-learn', color: ColorTags.BLUE },
           { label: 'mlflow', color: ColorTags.BLUE },
-          { label: 'Train-Test Split', color: ColorTags.BLUE },
           { label: 'Deep Learning', color: ColorTags.FUCHSIA },
           { label: 'tensorflow', color: ColorTags.FUCHSIA },
           { label: 'Data Curation', color: ColorTags.YELLOW },
