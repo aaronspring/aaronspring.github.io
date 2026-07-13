@@ -24,7 +24,10 @@ const ProjectList = () => (
           { label: 'ARCO', color: ColorTags.SKY },
           { label: 'Zarr', color: ColorTags.SKY },
           { label: 'Icechunk', color: ColorTags.INDIGO },
-          { label: 'AWS S3', color: ColorTags.INDIGO },
+          { label: 'Arraylake', color: ColorTags.INDIGO },
+          { label: 'AWS', color: ColorTags.INDIGO },
+          { label: 'Coiled', color: ColorTags.INDIGO },
+          { label: 'GitHub Actions', color: ColorTags.GRAY },
           { label: 'Python', color: ColorTags.VIOLET },
         ]}
         links={[
@@ -54,8 +57,10 @@ const ProjectList = () => (
           { label: 'pytorch', color: ColorTags.FUCHSIA },
           { label: 'Tracing', color: ColorTags.GRAY },
           { label: 'langfuse', color: ColorTags.GRAY },
+          { label: 'Streamlit', color: ColorTags.GRAY },
           { label: 'Data Curation', color: ColorTags.YELLOW },
           { label: 'metaflow', color: ColorTags.AMBER },
+          { label: 'Snowflake', color: ColorTags.INDIGO },
           { label: 'Personalisation', color: ColorTags.CYAN },
           { label: 'Python', color: ColorTags.VIOLET },
           { label: 'Scala', color: ColorTags.EMERALD },
@@ -75,6 +80,7 @@ const ProjectList = () => (
           { label: 'Deep Learning', color: ColorTags.FUCHSIA },
           { label: 'tensorflow', color: ColorTags.FUCHSIA },
           { label: 'Data Curation', color: ColorTags.YELLOW },
+          { label: 'Snowflake', color: ColorTags.INDIGO },
           { label: 'Python', color: ColorTags.VIOLET },
           { label: 'Scala', color: ColorTags.EMERALD },
         ]}
