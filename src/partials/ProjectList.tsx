@@ -25,7 +25,7 @@ const ProjectList = () => (
           { label: 'Zarr', color: ColorTags.SKY },
           { label: 'Icechunk', color: ColorTags.INDIGO },
           { label: 'Arraylake', color: ColorTags.INDIGO },
-          { label: 'AWS S3', color: ColorTags.INDIGO },
+          { label: 'AWS', color: ColorTags.INDIGO },
           { label: 'Coiled', color: ColorTags.INDIGO },
           { label: 'GitHub Actions', color: ColorTags.GRAY },
           { label: 'Python', color: ColorTags.VIOLET },
