@@ -25,6 +25,8 @@ const Hero = () => (
             className="mt-3 inline-block text-cyan-400 hover:underline"
             href="/cv_aaron_spring_2026.pdf"
             target="_blank"
+            data-goatcounter-click="cv-download-home"
+            data-goatcounter-title="Download CV (home)"
           >
             Download CV ↗
           </a>
