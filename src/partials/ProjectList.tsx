@@ -12,6 +12,28 @@ const ProjectList = () => (
   >
     <div className="flex flex-col gap-6">
       <ProjectCard
+        name="AI Product Engineering Workshops"
+        challenge="How to use hyped AI tools as an individual, a team, or a whole company?"
+        solution="A 2-day hands-on workshop where engineers learn the practice of working with coding agents: the mechanics underneath, the role shift on top, the configuration and integration craft in between. Claude Code is the concrete example. The way of working outlasts the tool."
+        img={{
+          src: '/assets/images/project-agent-workshop.svg',
+          alt: 'Hands-on coding agent workshop',
+        }}
+        tags={[
+          { label: 'Claude Code', color: ColorTags.ORANGE },
+          { label: 'LLM', color: ColorTags.FUCHSIA },
+          { label: 'Tracing', color: ColorTags.GRAY },
+          { label: 'Streamlit', color: ColorTags.GRAY },
+          { label: 'Python', color: ColorTags.VIOLET },
+        ]}
+        links={[
+          {
+            label: 'Training at Hackers & Wizards',
+            href: 'https://www.hackersandwizards.dev/training/',
+          },
+        ]}
+      />
+      <ProjectCard
         name="ARCO ERA5"
         challenge="Access the best climate reanalysis based on the most recent available data for maps and time-series use-cases."
         solution="Built an analysis-ready cloud-optimised (ARCO) ERA5 dataset on Earthmover Arraylake with dual chunking optimized for maps and time-series applications, leveraging Icechunk for ACID transactions and an attached SLA covering data freshness and availability."
@@ -28,6 +50,7 @@ const ProjectList = () => (
           { label: 'AWS', color: ColorTags.INDIGO },
           { label: 'Coiled', color: ColorTags.INDIGO },
           { label: 'GitHub Actions', color: ColorTags.GRAY },
+          { label: 'Claude Code', color: ColorTags.ORANGE },
           { label: 'Python', color: ColorTags.VIOLET },
         ]}
         links={[
