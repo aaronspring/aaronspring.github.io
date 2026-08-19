@@ -11,9 +11,10 @@ type Props = {
   img: { src: string; alt: string };
   tags: TagEntry[];
   links?: LinkEntry[];
+  collaboration?: string;
 };
 
-const ProjectCard = ({ name, challenge, solution, img, tags, links }: Props) => (
+const ProjectCard = ({ name, challenge, solution, img, tags, links, collaboration }: Props) => (
   <div className="flex flex-col gap-6 rounded-md border border-slate-700 bg-slate-800 p-6 md:flex-row">
     <div className="w-full shrink-0 md:w-36">
       <img
@@ -37,6 +38,14 @@ const ProjectCard = ({ name, challenge, solution, img, tags, links }: Props) => 
         </p>
         <p className="mt-1 text-sm text-gray-300">{solution}</p>
       </div>
+      {collaboration && (
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-wider text-cyan-400">
+            Collaboration
+          </p>
+          <p className="mt-1 text-sm text-gray-300">{collaboration}</p>
+        </div>
+      )}
       {links && links.length > 0 && (
         <div className="flex flex-wrap gap-4">
           {links.map(({ label, href }) => (

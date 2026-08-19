@@ -112,6 +112,7 @@ const ProjectList = () => (
         name="S2S Forecast Challenge"
         challenge="Run a Kaggle-style challenge for sub-seasonal climate forecasts with low entry barriers"
         solution="Curated training datasets and a verification pipeline on git & notebook-based renkulab.io for clean-data ML forecast submissions with standardised metrics."
+        collaboration="Swiss Data Science Center (SDSC), World Meteorological Organization (WMO) and European Centre for Medium-Range Weather Forecasts (ECMWF)."
         img={{
           src: '/assets/images/project-climate-forecast.svg',
           alt: 'Climate data forecasting with AI',
