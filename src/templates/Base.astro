@@ -2,6 +2,7 @@
 import { Footer } from '@/partials/Footer';
 import { Navbar } from '@/partials/Navbar';
 import { AppConfig } from '@/utils/AppConfig';
+import '@/styles/theme.css';
 
 export interface Props {
   head: {
@@ -24,6 +25,19 @@ const {
     <meta name='author' content={AppConfig.author} />
 
     <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+    <script is:inline>
+      // Applied before first paint so the chosen theme never flashes.
+      // Dark is the default; only an explicit "light" choice is stored.
+      (function () {
+        try {
+          if (localStorage.getItem('theme') === 'light') {
+            document.documentElement.classList.add('light');
+          }
+        } catch (e) {
+          /* storage unavailable: stay on the dark default */
+        }
+      })();
+    </script>
     <script is:inline>
       // Include the #anchor in the recorded path so in-page sections
       // (e.g. /#value, /#projects) show up as distinct pages in GoatCounter.
@@ -48,5 +62,16 @@ const {
     <slot></slot>
 
     <Footer />
+
+    <script is:inline>
+      document.getElementById('theme-toggle')?.addEventListener('click', function () {
+        var isLight = document.documentElement.classList.toggle('light');
+        try {
+          localStorage.setItem('theme', isLight ? 'light' : 'dark');
+        } catch (e) {
+          /* storage unavailable: the choice just won't persist */
+        }
+      });
+    </script>
   </body>
 </html>
