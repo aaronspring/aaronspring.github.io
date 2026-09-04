@@ -14,20 +14,22 @@ const Hero = () => (
       }
       description={
         <>
-          I turn data and AI ideas into products that hold up in production.
+          I turn data and AI ideas into production-ready products:
           <ul className="mt-2 list-disc list-inside">
             <li>
-              Historical user data &rarr; predict behaviour with classical
-              machine learning
+              Messy climate data &rarr; analysis-ready and effective to query
             </li>
             <li>
               An AI idea &rarr; verifiable prototype to deployed system
             </li>
-            <li>Messy climate data &rarr; analysis-ready and cheap to query</li>
+            <li>
+              Historical user data &rarr; predict behaviour with classical
+              machine learning
+            </li>
           </ul>
           <p className="mt-2">
-            9+ years delivering production ML/LLM/data systems at scale.
-            Freelance, based in Hamburg.
+            9+ years delivering production geospatial data, LLM and ML systems
+            at scale. Freelance, based in Hamburg.
           </p>
         </>
       }

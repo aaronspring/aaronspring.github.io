@@ -2,14 +2,17 @@ import { GradientText, Section } from 'astro-boilerplate-components';
 
 const valueSections = [
   {
-    role: 'ML Engineer',
+    role: 'Geospatial Data Engineer',
     bullets: [
-      'Identify use cases for automated decision-making',
-      'Curate training datasets',
-      'Train models for automated decision-making',
-      'Deploy and monitor models',
+      'Identify datasets for cloud-based workflows in climate risk and energy domains',
+      'Build analysis-ready, cloud-optimised (ARCO) climate datasets with inherent safety, consistency and reproducibility',
+      'Orchestrate scheduled geospatial cloud pipelines',
+      'Optimise storage, chunking, throughput and cost',
     ],
-    projects: [{ name: 'Ad Personalisation', href: '#ad-personalisation' }],
+    projects: [
+      { name: 'ARCO ERA5', href: '#arco-era5' },
+      { name: 'S2S Forecast Challenge', href: '#s2s-forecast-challenge' },
+    ],
   },
   {
     role: 'AI Engineer',
@@ -28,17 +31,14 @@ const valueSections = [
     ],
   },
   {
-    role: 'Geospatial Data Engineer',
+    role: 'ML Engineer',
     bullets: [
-      'Identify datasets for cloud-based workflows in climate risk and energy domains',
-      'Build analysis-ready, cloud-optimised (ARCO) climate datasets with inherent safety, consistency and reproducibility',
-      'Orchestrate scheduled geospatial cloud pipelines',
-      'Optimise storage, chunking, throughput and cost',
+      'Identify use cases for automated decision-making',
+      'Curate training datasets',
+      'Train models for automated decision-making',
+      'Deploy and monitor models',
     ],
-    projects: [
-      { name: 'ARCO ERA5', href: '#arco-era5' },
-      { name: 'S2S Forecast Challenge', href: '#s2s-forecast-challenge' },
-    ],
+    projects: [{ name: 'Ad Personalisation', href: '#ad-personalisation' }],
   },
 ];
 
