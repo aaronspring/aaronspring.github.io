@@ -1,83 +1,116 @@
 <svg width="500" height="500" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <radialGradient id="ringA" cx="35%" cy="35%" r="65%">
-      <stop offset="0%" stop-color="#A7F3D0"/>
-      <stop offset="100%" stop-color="#064E3B"/>
-    </radialGradient>
-    <radialGradient id="ringB" cx="35%" cy="35%" r="65%">
-      <stop offset="0%" stop-color="#6EE7B7"/>
+    <radialGradient id="nodeIn" cx="32%" cy="28%" r="72%">
+      <stop offset="0%" stop-color="#D1FAE5"/>
+      <stop offset="55%" stop-color="#34D399"/>
       <stop offset="100%" stop-color="#047857"/>
     </radialGradient>
-    <radialGradient id="ringC" cx="35%" cy="35%" r="65%">
-      <stop offset="0%" stop-color="#D1FAE5"/>
-      <stop offset="100%" stop-color="#059669"/>
-    </radialGradient>
-    <radialGradient id="person" cx="35%" cy="30%" r="70%">
+    <radialGradient id="nodeHidden" cx="32%" cy="28%" r="72%">
       <stop offset="0%" stop-color="#ECFDF5"/>
       <stop offset="50%" stop-color="#10B981"/>
       <stop offset="100%" stop-color="#065F46"/>
     </radialGradient>
-    <radialGradient id="star" cx="30%" cy="25%" r="70%">
-      <stop offset="0%" stop-color="#FEF9C3"/>
+    <linearGradient id="slot" x1="352" y1="140" x2="440" y2="198" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#6EE7B7"/>
+      <stop offset="100%" stop-color="#047857"/>
+    </linearGradient>
+    <linearGradient id="slotPicked" x1="346" y1="212" x2="446" y2="288" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FEF08A"/>
+      <stop offset="55%" stop-color="#F59E0B"/>
       <stop offset="100%" stop-color="#92400E"/>
-    </radialGradient>
-    <filter id="shadow" x="-25%" y="-25%" width="150%" height="150%">
-      <feDropShadow dx="0" dy="10" stdDeviation="16" flood-color="#064E3B" flood-opacity="0.22"/>
+    </linearGradient>
+    <filter id="netShadow" x="-25%" y="-25%" width="150%" height="150%">
+      <feDropShadow dx="0" dy="12" stdDeviation="18" flood-color="#064E3B" flood-opacity="0.22"/>
+    </filter>
+    <filter id="pickGlow" x="-60%" y="-60%" width="220%" height="220%">
+      <feDropShadow dx="0" dy="0" stdDeviation="16" flood-color="#F59E0B" flood-opacity="0.55"/>
     </filter>
   </defs>
 
   <!-- Ground shadow -->
-  <ellipse cx="250" cy="462" rx="135" ry="14" fill="#064E3B" opacity="0.1"/>
+  <ellipse cx="250" cy="452" rx="150" ry="14" fill="#064E3B" opacity="0.1"/>
 
-  <g filter="url(#shadow)">
-    <!-- OUTER RING — side face -->
-    <path d="M 58,308 A 192,52 0 0,0 442,308 L 442,338 A 192,52 0 0,1 58,338 Z" fill="#047857" opacity="0.65"/>
-    <!-- OUTER RING — top face -->
-    <ellipse cx="250" cy="308" rx="192" ry="52" fill="url(#ringA)"/>
-    <ellipse cx="250" cy="308" rx="130" ry="35" fill="url(#ringB)"/>
+  <!-- WEIGHTS — input layer to hidden layer, the lit path is the personalised one -->
+  <line x1="112" y1="152" x2="250" y2="122" stroke="#34D399" stroke-width="2.5" opacity="0.22"/>
+  <line x1="112" y1="152" x2="250" y2="186" stroke="#34D399" stroke-width="2.5" opacity="0.28"/>
+  <line x1="112" y1="152" x2="250" y2="250" stroke="#34D399" stroke-width="2.5" opacity="0.34"/>
+  <line x1="112" y1="152" x2="250" y2="314" stroke="#34D399" stroke-width="2.5" opacity="0.22"/>
+  <line x1="112" y1="152" x2="250" y2="378" stroke="#34D399" stroke-width="2.5" opacity="0.28"/>
+  <line x1="112" y1="218" x2="250" y2="122" stroke="#34D399" stroke-width="2.5" opacity="0.28"/>
+  <line x1="112" y1="218" x2="250" y2="186" stroke="#34D399" stroke-width="2.5" opacity="0.34"/>
+  <line x1="112" y1="218" x2="250" y2="250" stroke="#A7F3D0" stroke-width="5" opacity="0.85"/>
+  <line x1="112" y1="218" x2="250" y2="314" stroke="#34D399" stroke-width="2.5" opacity="0.28"/>
+  <line x1="112" y1="218" x2="250" y2="378" stroke="#34D399" stroke-width="2.5" opacity="0.34"/>
+  <line x1="112" y1="284" x2="250" y2="122" stroke="#34D399" stroke-width="2.5" opacity="0.34"/>
+  <line x1="112" y1="284" x2="250" y2="186" stroke="#34D399" stroke-width="2.5" opacity="0.22"/>
+  <line x1="112" y1="284" x2="250" y2="250" stroke="#34D399" stroke-width="2.5" opacity="0.28"/>
+  <line x1="112" y1="284" x2="250" y2="314" stroke="#34D399" stroke-width="2.5" opacity="0.34"/>
+  <line x1="112" y1="284" x2="250" y2="378" stroke="#34D399" stroke-width="2.5" opacity="0.22"/>
+  <line x1="112" y1="350" x2="250" y2="122" stroke="#34D399" stroke-width="2.5" opacity="0.22"/>
+  <line x1="112" y1="350" x2="250" y2="186" stroke="#34D399" stroke-width="2.5" opacity="0.28"/>
+  <line x1="112" y1="350" x2="250" y2="250" stroke="#34D399" stroke-width="2.5" opacity="0.34"/>
+  <line x1="112" y1="350" x2="250" y2="314" stroke="#34D399" stroke-width="2.5" opacity="0.22"/>
+  <line x1="112" y1="350" x2="250" y2="378" stroke="#34D399" stroke-width="2.5" opacity="0.28"/>
 
-    <!-- MIDDLE RING — side face -->
-    <path d="M 100,248 A 150,40 0 0,0 400,248 L 400,275 A 150,40 0 0,1 100,275 Z" fill="#059669" opacity="0.65"/>
-    <!-- MIDDLE RING — top face -->
-    <ellipse cx="250" cy="248" rx="150" ry="40" fill="url(#ringB)"/>
-    <ellipse cx="250" cy="248" rx="88" ry="23" fill="url(#ringC)"/>
+  <!-- WEIGHTS — hidden layer to the three ad slots -->
+  <line x1="250" y1="122" x2="352" y2="169" stroke="#34D399" stroke-width="2.5" opacity="0.20"/>
+  <line x1="250" y1="122" x2="352" y2="250" stroke="#34D399" stroke-width="2.5" opacity="0.26"/>
+  <line x1="250" y1="122" x2="352" y2="331" stroke="#34D399" stroke-width="2.5" opacity="0.32"/>
+  <line x1="250" y1="186" x2="352" y2="169" stroke="#34D399" stroke-width="2.5" opacity="0.26"/>
+  <line x1="250" y1="186" x2="352" y2="250" stroke="#34D399" stroke-width="2.5" opacity="0.32"/>
+  <line x1="250" y1="186" x2="352" y2="331" stroke="#34D399" stroke-width="2.5" opacity="0.20"/>
+  <line x1="250" y1="250" x2="352" y2="169" stroke="#34D399" stroke-width="2.5" opacity="0.32"/>
+  <line x1="250" y1="250" x2="352" y2="250" stroke="#A7F3D0" stroke-width="5" opacity="0.85"/>
+  <line x1="250" y1="250" x2="352" y2="331" stroke="#34D399" stroke-width="2.5" opacity="0.26"/>
+  <line x1="250" y1="314" x2="352" y2="169" stroke="#34D399" stroke-width="2.5" opacity="0.20"/>
+  <line x1="250" y1="314" x2="352" y2="250" stroke="#34D399" stroke-width="2.5" opacity="0.26"/>
+  <line x1="250" y1="314" x2="352" y2="331" stroke="#34D399" stroke-width="2.5" opacity="0.32"/>
+  <line x1="250" y1="378" x2="352" y2="169" stroke="#34D399" stroke-width="2.5" opacity="0.26"/>
+  <line x1="250" y1="378" x2="352" y2="250" stroke="#34D399" stroke-width="2.5" opacity="0.32"/>
+  <line x1="250" y1="378" x2="352" y2="331" stroke="#34D399" stroke-width="2.5" opacity="0.20"/>
 
-    <!-- PERSON DISC — side face -->
-    <path d="M 162,196 A 88,23 0 0,0 338,196 L 338,220 A 88,23 0 0,1 162,220 Z" fill="#065F46" opacity="0.6"/>
-    <!-- PERSON DISC — top face -->
-    <ellipse cx="250" cy="196" rx="88" ry="23" fill="url(#ringC)"/>
+  <g filter="url(#netShadow)">
+    <!-- INPUT LAYER — user signals -->
+    <circle cx="112" cy="152" r="21" fill="url(#nodeIn)"/>
+    <circle cx="112" cy="218" r="21" fill="url(#nodeIn)"/>
+    <circle cx="112" cy="284" r="21" fill="url(#nodeIn)"/>
+    <circle cx="112" cy="350" r="21" fill="url(#nodeIn)"/>
 
-    <!-- PERSON FIGURE (head + body, floating above center) -->
-    <!-- Body (behind head, drawn first) -->
-    <ellipse cx="250" cy="164" rx="32" ry="16" fill="url(#person)"/>
-    <!-- Head -->
-    <circle cx="250" cy="138" r="30" fill="url(#person)"/>
+    <!-- HIDDEN LAYER -->
+    <circle cx="250" cy="122" r="24" fill="url(#nodeHidden)"/>
+    <circle cx="250" cy="186" r="24" fill="url(#nodeHidden)"/>
+    <circle cx="250" cy="250" r="24" fill="url(#nodeHidden)"/>
+    <circle cx="250" cy="314" r="24" fill="url(#nodeHidden)"/>
+    <circle cx="250" cy="378" r="24" fill="url(#nodeHidden)"/>
+
+    <!-- AD SLOTS — the candidates competing for the impression -->
+    <rect x="352" y="140" width="88" height="58" rx="12" fill="url(#slot)" opacity="0.85"/>
+    <rect x="352" y="302" width="88" height="58" rx="12" fill="url(#slot)" opacity="0.85"/>
   </g>
 
-  <!-- Specular highlights on rings -->
-  <ellipse cx="234" cy="303" rx="115" ry="28" fill="rgba(255,255,255,0.18)"/>
-  <ellipse cx="236" cy="244" rx="78" ry="18" fill="rgba(255,255,255,0.18)"/>
-  <ellipse cx="238" cy="193" rx="48" ry="12" fill="rgba(255,255,255,0.22)"/>
-  <!-- Head specular -->
-  <ellipse cx="240" cy="128" rx="16" ry="10" fill="rgba(255,255,255,0.28)"/>
+  <!-- Node speculars -->
+  <ellipse cx="105" cy="145" rx="8" ry="5" fill="rgba(255,255,255,0.30)"/>
+  <ellipse cx="105" cy="211" rx="8" ry="5" fill="rgba(255,255,255,0.30)"/>
+  <ellipse cx="105" cy="277" rx="8" ry="5" fill="rgba(255,255,255,0.30)"/>
+  <ellipse cx="105" cy="343" rx="8" ry="5" fill="rgba(255,255,255,0.30)"/>
+  <ellipse cx="242" cy="114" rx="9" ry="6" fill="rgba(255,255,255,0.28)"/>
+  <ellipse cx="242" cy="178" rx="9" ry="6" fill="rgba(255,255,255,0.28)"/>
+  <ellipse cx="242" cy="242" rx="9" ry="6" fill="rgba(255,255,255,0.28)"/>
+  <ellipse cx="242" cy="306" rx="9" ry="6" fill="rgba(255,255,255,0.28)"/>
+  <ellipse cx="242" cy="370" rx="9" ry="6" fill="rgba(255,255,255,0.28)"/>
 
-  <!-- PROFILE DOTS on outer ring (many users = broad audience) -->
-  <circle cx="108" cy="306" r="11" fill="url(#person)" opacity="0.9"/>
-  <circle cx="152" cy="283" r="11" fill="url(#person)" opacity="0.9"/>
-  <circle cx="202" cy="270" r="11" fill="url(#person)" opacity="0.9"/>
-  <circle cx="250" cy="267" r="11" fill="url(#person)" opacity="0.9"/>
-  <circle cx="298" cy="270" r="11" fill="url(#person)" opacity="0.9"/>
-  <circle cx="348" cy="283" r="11" fill="url(#person)" opacity="0.9"/>
-  <circle cx="392" cy="306" r="11" fill="url(#person)" opacity="0.9"/>
-  <circle cx="155" cy="330" r="11" fill="url(#person)" opacity="0.38"/>
-  <circle cx="250" cy="340" r="11" fill="url(#person)" opacity="0.38"/>
-  <circle cx="345" cy="330" r="11" fill="url(#person)" opacity="0.38"/>
+  <!-- Unselected ad slot content -->
+  <rect x="368" y="158" width="42" height="9" rx="4" fill="rgba(255,255,255,0.45)"/>
+  <rect x="368" y="174" width="56" height="7" rx="3" fill="rgba(255,255,255,0.28)"/>
+  <rect x="368" y="320" width="42" height="9" rx="4" fill="rgba(255,255,255,0.45)"/>
+  <rect x="368" y="336" width="56" height="7" rx="3" fill="rgba(255,255,255,0.28)"/>
 
-  <!-- PROFILE DOTS on middle ring (segment) -->
-  <circle cx="142" cy="246" r="11" fill="url(#person)"/>
-  <circle cx="250" cy="232" r="11" fill="url(#person)"/>
-  <circle cx="358" cy="246" r="11" fill="url(#person)"/>
-
-  <!-- PERSONALIZATION STAR — attached to the person figure (top-right) -->
-  <path d="M286,104 L289,113 L299,116 L289,119 L286,128 L283,119 L273,116 L283,113 Z" fill="url(#star)"/>
+  <!-- SELECTED AD — the most relevant impression for this user -->
+  <g filter="url(#pickGlow)">
+    <rect x="346" y="212" width="100" height="76" rx="14" fill="url(#slotPicked)"/>
+  </g>
+  <rect x="346" y="212" width="100" height="30" rx="14" fill="rgba(255,255,255,0.20)"/>
+  <rect x="346" y="228" width="100" height="14" fill="rgba(255,255,255,0.20)"/>
+  <rect x="364" y="248" width="52" height="10" rx="5" fill="rgba(255,255,255,0.70)"/>
+  <rect x="364" y="266" width="64" height="8" rx="4" fill="rgba(255,255,255,0.45)"/>
 </svg>
