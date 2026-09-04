@@ -8,9 +8,6 @@ const CTA = () => (
         Interested in working together? Reach out and I'll get back to you.
       </p>
       <div className="flex gap-4">
-        <a href="https://github.com/aaronspring" target="_blank" rel="noopener noreferrer">
-          <HeroSocial src="/assets/images/github-icon.svg" alt="GitHub" />
-        </a>
         <a href="https://www.linkedin.com/in/springaaron/" target="_blank" rel="noopener noreferrer">
           <HeroSocial src="/assets/images/linkedin-icon.png" alt="LinkedIn" />
         </a>
@@ -27,6 +24,9 @@ const CTA = () => (
             <rect x="2" y="4" width="20" height="16" rx="2" />
             <path d="M2 7l10 7 10-7" />
           </svg>
+        </a>
+        <a href="https://github.com/aaronspring" target="_blank" rel="noopener noreferrer">
+          <HeroSocial src="/assets/images/github-icon.svg" alt="GitHub" />
         </a>
       </div>
     </div>

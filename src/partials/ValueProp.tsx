@@ -9,14 +9,22 @@ const valueSections = [
       'Train models for automated decision-making',
       'Deploy and monitor models',
     ],
+    projects: [{ name: 'Ad Personalisation', href: '#ad-personalisation' }],
   },
   {
     role: 'AI Engineer',
     bullets: [
       'Identify GenAI use cases from #weNeedToDoAI',
-      'Turn business ideas into verifiable prototypes, fast',
+      'Turn business ideas into verifiable prototypes (fast)',
       'AI evaluations: human annotation design, error analysis and automated verification',
       'Consult on how to integrate AI tooling into your team',
+    ],
+    projects: [
+      { name: 'AI Recruiting Agent', href: '#ai-recruiting-agent' },
+      {
+        name: 'AI Product Engineering Workshops',
+        href: '#ai-product-engineering-workshops',
+      },
     ],
   },
   {
@@ -26,6 +34,10 @@ const valueSections = [
       'Build analysis-ready, cloud-optimised (ARCO) climate datasets with inherent safety, consistency and reproducibility',
       'Orchestrate scheduled geospatial cloud pipelines',
       'Optimise storage, chunking, throughput and cost',
+    ],
+    projects: [
+      { name: 'ARCO ERA5', href: '#arco-era5' },
+      { name: 'S2S Forecast Challenge', href: '#s2s-forecast-challenge' },
     ],
   },
 ];
@@ -47,6 +59,20 @@ const ValueProp = () => (
               <li>{b}</li>
             ))}
           </ul>
+          <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-1">
+            <span className="text-xs font-semibold uppercase tracking-wider text-gray-400">
+              Projects
+            </span>
+            {section.projects.map((project) => (
+              <a
+                key={project.href}
+                className="text-sm font-medium text-cyan-400 hover:text-cyan-300"
+                href={project.href}
+              >
+                {project.name} »
+              </a>
+            ))}
+          </div>
         </div>
       ))}
     </div>

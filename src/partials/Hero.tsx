@@ -14,22 +14,21 @@ const Hero = () => (
       }
       description={
         <>
-          Freelance ML engineer, AI engineer and geospatial data engineer
-          based in Hamburg. I build:
+          I turn data and AI ideas into products that hold up in production.
           <ul className="mt-2 list-disc list-inside">
-            <li>Production ML systems</li>
-            <li>LLM-powered applications</li>
-            <li>Analysis-ready climate datasets</li>
+            <li>
+              Historical user data &rarr; predict behaviour with classical
+              machine learning
+            </li>
+            <li>
+              An AI idea &rarr; verifiable prototype to deployed system
+            </li>
+            <li>Messy climate data &rarr; analysis-ready and cheap to query</li>
           </ul>
-          <a
-            className="mt-3 inline-block text-cyan-400 hover:underline"
-            href="/cv_aaron_spring_2026.pdf"
-            target="_blank"
-            data-goatcounter-click="cv-download-home"
-            data-goatcounter-title="Download CV (home)"
-          >
-            Download CV ↗
-          </a>
+          <p className="mt-2">
+            9+ years delivering production ML/LLM/data systems at scale.
+            Freelance, based in Hamburg.
+          </p>
         </>
       }
       avatar={

@@ -12,9 +12,11 @@ const ProjectList = () => (
   >
     <div className="flex flex-col gap-6">
       <ProjectCard
+        id="ai-product-engineering-workshops"
         name="AI Product Engineering Workshops"
         challenge="How to use hyped AI tools as an individual, a team, or a whole company?"
-        solution="A 2-day hands-on workshop where engineers learn the practice of working with coding agents: the mechanics underneath, the role shift on top, the configuration and integration craft in between. Claude Code is the concrete example. The way of working outlasts the tool."
+        solution="A 2-day hands-on workshop on the practice of working with coding agents: the mechanics underneath, the role shift on top, the craft in between."
+        win="Participants confidently use coding agents like Claude Code. The way of working outlasts the tool."
         img={{
           src: '/assets/images/project-agent-workshop.svg',
           alt: 'Hands-on coding agent workshop',
@@ -34,9 +36,11 @@ const ProjectList = () => (
         ]}
       />
       <ProjectCard
+        id="arco-era5"
         name="ARCO ERA5"
         challenge="Access the best climate reanalysis based on the most recent available data for maps and time-series use-cases."
-        solution="Built an analysis-ready cloud-optimised (ARCO) ERA5 dataset on Earthmover Arraylake with dual chunking optimized for maps and time-series applications, leveraging Icechunk for ACID transactions and an attached SLA covering data freshness and availability."
+        solution="Analysis-ready cloud-optimised (ARCO) ERA5 on Earthmover Arraylake, dual-chunked for map and time-series access, with Icechunk ACID transactions and an SLA on freshness updating daily."
+        win="Customers can subscribe to a ready-to-use ERA5 dataset. Time-series and map queries execute in under 3 seconds."
         img={{
           src: '/assets/images/project-climate-cloud.svg',
           alt: 'Climate array data in the cloud',
@@ -65,9 +69,11 @@ const ProjectList = () => (
         ]}
       />
       <ProjectCard
+        id="ai-recruiting-agent"
         name="AI Recruiting Agent"
-        challenge="How to speed up recruiter candidate review load at scale?"
-        solution="Recruiting agent narrowing 20M profiles to 1,000 candidates via embeddings retrieval, down to ~200 prescreened candidates with a fine-tuned LLM, returning ~10 qualified & interested applicants via personalised outreach per job posting."
+        challenge="How to speed up the candidate review load of recruiters and hiring managers at scale?"
+        solution="Agent narrowing 20M profiles to 1,000 via embeddings retrieval, down to ~200 prescreened by a fine-tuned LLM, ending at ~10 qualified and interested applicants per job posting."
+        win="Reduced time spent on shortlisting for hiring managers to 10 minutes."
         img={{ src: '/assets/images/project-recruiting-funnel.svg', alt: 'AI Recruiting Agent funnel' }}
         tags={[
           { label: 'Job Candidate Matching', color: ColorTags.CYAN },
@@ -90,9 +96,11 @@ const ProjectList = () => (
         ]}
       />
       <ProjectCard
+        id="ad-personalisation"
         name="Ad Personalisation"
         challenge="Maximize revenue per impression by selecting the ad most relevant for the user."
-        solution="Improved CTR and revenue-per-impression by 2% by upgrading from logistic regression to deep neural network enabling ad-user personalisation."
+        solution="Upgraded from logistic regression to a deep neural network enabling ad-user personalisation."
+        win="Improved click-through-ratio and revenue-per-impression by 2%."
         img={{ src: '/assets/images/project-ad-personalization.svg', alt: 'Ad user personalization' }}
         tags={[
           { label: 'Ad Tech', color: ColorTags.TEAL },
@@ -109,6 +117,7 @@ const ProjectList = () => (
         ]}
       />
       <ProjectCard
+        id="s2s-forecast-challenge"
         name="S2S Forecast Challenge"
         challenge="Run a Kaggle-style challenge for sub-seasonal climate forecasts with low entry barriers"
         solution="Curated training datasets and a verification pipeline on git & notebook-based renkulab.io for clean-data ML forecast submissions with standardised metrics."

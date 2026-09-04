@@ -5,17 +5,32 @@ type TagEntry = { label: string; color: (typeof ColorTags)[keyof typeof ColorTag
 type LinkEntry = { label: string; href: string };
 
 type Props = {
+  id: string;
   name: string;
   challenge: string;
   solution: string;
+  win?: string;
   img: { src: string; alt: string };
   tags: TagEntry[];
   links?: LinkEntry[];
   collaboration?: string;
 };
 
-const ProjectCard = ({ name, challenge, solution, img, tags, links, collaboration }: Props) => (
-  <div className="flex flex-col gap-6 rounded-md border border-slate-700 bg-slate-800 p-6 md:flex-row">
+const ProjectCard = ({
+  id,
+  name,
+  challenge,
+  solution,
+  win,
+  img,
+  tags,
+  links,
+  collaboration,
+}: Props) => (
+  <div
+    id={id}
+    className="flex scroll-mt-24 flex-col gap-6 rounded-md border border-slate-700 bg-slate-800 p-6 md:flex-row"
+  >
     <div className="w-full shrink-0 md:w-36">
       <img
         className="h-24 w-full rounded-md object-contain md:h-full md:w-36"
@@ -38,6 +53,14 @@ const ProjectCard = ({ name, challenge, solution, img, tags, links, collaboratio
         </p>
         <p className="mt-1 text-sm text-gray-300">{solution}</p>
       </div>
+      {win && (
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-wider text-cyan-400">
+            Win
+          </p>
+          <p className="mt-1 text-sm text-gray-300">{win}</p>
+        </div>
+      )}
       {collaboration && (
         <div>
           <p className="text-xs font-semibold uppercase tracking-wider text-cyan-400">
