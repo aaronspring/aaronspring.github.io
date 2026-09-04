@@ -27,14 +27,20 @@ const {
     <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
     <script is:inline>
       // Applied before first paint so the chosen theme never flashes.
-      // Dark is the default; only an explicit "light" choice is stored.
+      // An explicit choice from the toggle wins; otherwise follow the OS,
+      // falling back to dark when it expresses no preference.
       (function () {
+        var stored = null;
         try {
-          if (localStorage.getItem('theme') === 'light') {
-            document.documentElement.classList.add('light');
-          }
+          stored = localStorage.getItem('theme');
         } catch (e) {
-          /* storage unavailable: stay on the dark default */
+          /* storage unavailable: fall through to the OS preference */
+        }
+        var light = stored
+          ? stored === 'light'
+          : window.matchMedia('(prefers-color-scheme: light)').matches;
+        if (light) {
+          document.documentElement.classList.add('light');
         }
       })();
     </script>
@@ -72,6 +78,19 @@ const {
           /* storage unavailable: the choice just won't persist */
         }
       });
+
+      // Track the OS switching (e.g. macOS auto appearance at sunset) until
+      // the visitor picks a theme themselves.
+      window
+        .matchMedia('(prefers-color-scheme: light)')
+        .addEventListener('change', function (event) {
+          try {
+            if (localStorage.getItem('theme')) return;
+          } catch (e) {
+            /* storage unavailable: no stored choice to respect */
+          }
+          document.documentElement.classList.toggle('light', event.matches);
+        });
     </script>
   </body>
 </html>
