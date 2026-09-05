@@ -5,35 +5,38 @@ import { ProjectCard } from './ProjectCard';
 const ProjectList = () => (
   <Section
     title={
-      <>
-        Recent <GradientText>Projects</GradientText>
-      </>
+      /* The filter status shares the heading row, so toggling it never
+         moves the project cards. */
+      <div className="flex items-baseline justify-between gap-4">
+        <span>
+          Recent <GradientText>Projects</GradientText>
+        </span>
+        <div
+          id="tag-filter-bar"
+          className="flex min-w-0 items-baseline gap-2 whitespace-nowrap text-xs font-normal text-gray-400 sm:text-sm"
+          hidden
+        >
+          <span className="min-w-0 truncate">
+            <span id="tag-filter-count" />/<span id="tag-filter-total" />{' '}
+            tagged <span className="text-gray-200" id="tag-filter-label" />
+          </span>
+          <button
+            type="button"
+            id="tag-filter-clear"
+            className="shrink-0 font-medium text-cyan-400 hover:text-cyan-300"
+          >
+            Clear
+          </button>
+        </div>
+      </div>
     }
   >
     <div className="flex flex-col gap-6" id="project-list">
-      <div
-        id="tag-filter-bar"
-        className="flex items-center gap-3 text-sm text-gray-400"
-        hidden
-      >
-        <span>
-          Showing <span id="tag-filter-count" /> of{' '}
-          <span id="tag-filter-total" /> projects tagged{' '}
-          <span id="tag-filter-label" className="text-gray-200" />
-        </span>
-        <button
-          type="button"
-          id="tag-filter-clear"
-          className="font-medium text-cyan-400 hover:text-cyan-300"
-        >
-          Clear
-        </button>
-      </div>
       <ProjectCard
         id="ai-product-engineering-workshops"
         name="AI Product Engineering Workshops"
         challenge="How to use hyped AI tools as an individual, a team, or a whole company?"
-        solution="A 2-day hands-on workshop on working with coding agents: the mechanics underneath, the role shift on top, the craft in between."
+        solution="2-day hands-on workshops on working effectively with coding agents: the mechanics underneath, the role shift on top, the craft in between."
         win="Participants confidently use coding agents like Claude Code. The way of working outlasts the tool."
         img={{
           src: '/assets/images/project-agent-workshop.svg',
@@ -116,7 +119,7 @@ const ProjectList = () => (
         name="Ad Personalisation"
         challenge="Maximize revenue per impression by ranking ads by relevance for the user."
         solution="Upgraded from logistic regression to a deep neural network enabling ad-user personalisation."
-        win="Improved click-through-ratio and revenue-per-impression by 2%."
+        win="Improved click-through-ratio and revenue-per-impression by 2% in production."
         img={{
           src: '/assets/images/project-ad-personalization.svg',
           alt: 'Ad user personalization',
