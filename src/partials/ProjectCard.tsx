@@ -27,7 +27,8 @@ const ProjectCard = ({
 }: Props) => (
   <div
     id={id}
-    className="flex scroll-mt-24 flex-col gap-6 rounded-md border border-slate-700 bg-slate-800 p-6 md:flex-row"
+    className="project-card flex scroll-mt-24 flex-col gap-6 rounded-md border border-slate-700 bg-slate-800 p-6 md:flex-row"
+    data-tags={tags.join('|')}
   >
     <div className="w-full shrink-0 md:w-36">
       <img
@@ -84,9 +85,16 @@ const ProjectCard = ({
       )}
       <div className="flex flex-wrap gap-1.5">
         {sortTags(tags).map((label) => (
-          <span key={label} className={`tag tag-${kindOf(label)}`}>
+          <button
+            key={label}
+            type="button"
+            className={`tag tag-${kindOf(label)}`}
+            data-tag={label}
+            aria-pressed="false"
+            title={`Show projects tagged ${label}`}
+          >
             {label}
-          </span>
+          </button>
         ))}
       </div>
     </div>

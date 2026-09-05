@@ -10,7 +10,25 @@ const ProjectList = () => (
       </>
     }
   >
-    <div className="flex flex-col gap-6">
+    <div className="flex flex-col gap-6" id="project-list">
+      <div
+        id="tag-filter-bar"
+        className="flex items-center gap-3 text-sm text-gray-400"
+        hidden
+      >
+        <span>
+          Showing <span id="tag-filter-count" /> of{' '}
+          <span id="tag-filter-total" /> projects tagged{' '}
+          <span id="tag-filter-label" className="text-gray-200" />
+        </span>
+        <button
+          type="button"
+          id="tag-filter-clear"
+          className="font-medium text-cyan-400 hover:text-cyan-300"
+        >
+          Clear
+        </button>
+      </div>
       <ProjectCard
         id="ai-product-engineering-workshops"
         name="AI Product Engineering Workshops"

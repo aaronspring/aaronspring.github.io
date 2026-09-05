@@ -21,4 +21,64 @@ const { description } = AppConfig;
   <div id="contact">
     <CTA />
   </div>
+
+  <script is:inline>
+    // Clicking a tag highlights the projects carrying it and dims the rest.
+    // One tag is active at a time; clicking it again (or Clear) resets.
+    (function () {
+      var list = document.getElementById('project-list');
+      if (!list) return;
+
+      var cards = Array.prototype.slice.call(
+        list.querySelectorAll('.project-card')
+      );
+      var bar = document.getElementById('tag-filter-bar');
+      var countEl = document.getElementById('tag-filter-count');
+      var totalEl = document.getElementById('tag-filter-total');
+      var labelEl = document.getElementById('tag-filter-label');
+      var active = null;
+
+      if (totalEl) totalEl.textContent = String(cards.length);
+
+      function tagsOf(card) {
+        return (card.getAttribute('data-tags') || '').split('|');
+      }
+
+      function apply() {
+        var matches = 0;
+        cards.forEach(function (card) {
+          var hit = active === null || tagsOf(card).indexOf(active) !== -1;
+          card.classList.toggle('is-dimmed', !hit);
+          if (active !== null && hit) matches += 1;
+        });
+
+        list.querySelectorAll('.tag[data-tag]').forEach(function (tag) {
+          tag.setAttribute(
+            'aria-pressed',
+            tag.getAttribute('data-tag') === active ? 'true' : 'false'
+          );
+        });
+
+        if (bar) bar.hidden = active === null;
+        if (active !== null) {
+          if (countEl) countEl.textContent = String(matches);
+          if (labelEl) labelEl.textContent = active;
+        }
+      }
+
+      list.addEventListener('click', function (event) {
+        var tag = event.target.closest('.tag[data-tag]');
+        if (tag) {
+          var label = tag.getAttribute('data-tag');
+          active = active === label ? null : label;
+          apply();
+          return;
+        }
+        if (event.target.closest('#tag-filter-clear')) {
+          active = null;
+          apply();
+        }
+      });
+    })();
+  </script>
 </Base>
