@@ -24,7 +24,8 @@ const { description } = AppConfig;
 
   <script is:inline>
     // Clicking a tag highlights the projects carrying it and dims the rest.
-    // One tag is active at a time; clicking it again (or Clear) resets.
+    // One tag is active at a time; clicking it again, or anywhere else on
+    // the page, resets the selection and hides the filter bar.
     (function () {
       var list = document.getElementById('project-list');
       if (!list) return;
@@ -66,15 +67,21 @@ const { description } = AppConfig;
         }
       }
 
-      list.addEventListener('click', function (event) {
-        var tag = event.target.closest('.tag[data-tag]');
+      document.addEventListener('click', function (event) {
+        var target = event.target;
+        var tag =
+          target && target.closest ? target.closest('.tag[data-tag]') : null;
+
         if (tag) {
           var label = tag.getAttribute('data-tag');
           active = active === label ? null : label;
           apply();
           return;
         }
-        if (event.target.closest('#tag-filter-clear')) {
+
+        // Anything else — the Clear link, a card, the page background —
+        // drops the selection.
+        if (active !== null) {
           active = null;
           apply();
         }
