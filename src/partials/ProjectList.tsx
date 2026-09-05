@@ -1,4 +1,4 @@
-import { ColorTags, GradientText, Section } from 'astro-boilerplate-components';
+import { GradientText, Section } from 'astro-boilerplate-components';
 
 import { ProjectCard } from './ProjectCard';
 
@@ -21,13 +21,7 @@ const ProjectList = () => (
           src: '/assets/images/project-agent-workshop.svg',
           alt: 'Hands-on coding agent workshop',
         }}
-        tags={[
-          { label: 'Claude Code', color: ColorTags.ORANGE },
-          { label: 'LLM', color: ColorTags.FUCHSIA },
-          { label: 'Tracing', color: ColorTags.GRAY },
-          { label: 'Streamlit', color: ColorTags.GRAY },
-          { label: 'Python', color: ColorTags.VIOLET },
-        ]}
+        tags={['Claude Code', 'LLM', 'Tracing', 'Streamlit', 'Python']}
         links={[
           {
             label: 'Training at Hackers & Wizards',
@@ -46,16 +40,16 @@ const ProjectList = () => (
           alt: 'Climate array data in the cloud',
         }}
         tags={[
-          { label: 'Climate', color: ColorTags.LIME },
-          { label: 'ARCO', color: ColorTags.SKY },
-          { label: 'Zarr', color: ColorTags.SKY },
-          { label: 'Icechunk', color: ColorTags.INDIGO },
-          { label: 'Arraylake', color: ColorTags.INDIGO },
-          { label: 'AWS', color: ColorTags.INDIGO },
-          { label: 'Coiled', color: ColorTags.INDIGO },
-          { label: 'GitHub Actions', color: ColorTags.GRAY },
-          { label: 'Claude Code', color: ColorTags.ORANGE },
-          { label: 'Python', color: ColorTags.VIOLET },
+          'Climate',
+          'ARCO',
+          'Zarr',
+          'Icechunk',
+          'Arraylake',
+          'AWS',
+          'Coiled',
+          'GitHub Actions',
+          'Claude Code',
+          'Python',
         ]}
         links={[
           {
@@ -74,25 +68,28 @@ const ProjectList = () => (
         challenge="How to speed up the candidate review load of recruiters and hiring managers at scale?"
         solution="Agent narrowing 20M profiles to 1,000 via embeddings retrieval, down to ~200 prescreened by a fine-tuned LLM, ending at ~10 qualified and interested applicants per job posting."
         win="Reduced time spent on shortlisting for hiring managers to 10 minutes."
-        img={{ src: '/assets/images/project-recruiting-funnel.svg', alt: 'AI Recruiting Agent funnel' }}
+        img={{
+          src: '/assets/images/project-recruiting-funnel.svg',
+          alt: 'AI Recruiting Agent funnel',
+        }}
         tags={[
-          { label: 'Job Candidate Matching', color: ColorTags.CYAN },
-          { label: 'Embeddings', color: ColorTags.ROSE },
-          { label: 'Retrieval', color: ColorTags.ROSE },
-          { label: 'qdrant', color: ColorTags.ROSE },
-          { label: 'Deep Learning', color: ColorTags.FUCHSIA },
-          { label: 'LLM', color: ColorTags.FUCHSIA },
-          { label: 'Fine-tuning', color: ColorTags.FUCHSIA },
-          { label: 'pytorch', color: ColorTags.FUCHSIA },
-          { label: 'Tracing', color: ColorTags.GRAY },
-          { label: 'langfuse', color: ColorTags.GRAY },
-          { label: 'Streamlit', color: ColorTags.GRAY },
-          { label: 'Data Curation', color: ColorTags.YELLOW },
-          { label: 'metaflow', color: ColorTags.AMBER },
-          { label: 'Snowflake', color: ColorTags.INDIGO },
-          { label: 'Personalisation', color: ColorTags.CYAN },
-          { label: 'Python', color: ColorTags.VIOLET },
-          { label: 'Scala', color: ColorTags.EMERALD },
+          'Job Candidate Matching',
+          'Embeddings',
+          'Retrieval',
+          'qdrant',
+          'Deep Learning',
+          'LLM',
+          'Fine-tuning',
+          'pytorch',
+          'Tracing',
+          'langfuse',
+          'Streamlit',
+          'Data Curation',
+          'metaflow',
+          'Snowflake',
+          'Personalisation',
+          'Python',
+          'Scala',
         ]}
       />
       <ProjectCard
@@ -101,19 +98,22 @@ const ProjectList = () => (
         challenge="Maximize revenue per impression by ranking ads by relevance for the user."
         solution="Upgraded from logistic regression to a deep neural network enabling ad-user personalisation."
         win="Improved click-through-ratio and revenue-per-impression by 2%."
-        img={{ src: '/assets/images/project-ad-personalization.svg', alt: 'Ad user personalization' }}
+        img={{
+          src: '/assets/images/project-ad-personalization.svg',
+          alt: 'Ad user personalization',
+        }}
         tags={[
-          { label: 'Ad Tech', color: ColorTags.TEAL },
-          { label: 'Personalisation', color: ColorTags.CYAN },
-          { label: 'ML', color: ColorTags.BLUE },
-          { label: 'scikit-learn', color: ColorTags.BLUE },
-          { label: 'mlflow', color: ColorTags.BLUE },
-          { label: 'Deep Learning', color: ColorTags.FUCHSIA },
-          { label: 'tensorflow', color: ColorTags.FUCHSIA },
-          { label: 'Data Curation', color: ColorTags.YELLOW },
-          { label: 'Snowflake', color: ColorTags.INDIGO },
-          { label: 'Python', color: ColorTags.VIOLET },
-          { label: 'Scala', color: ColorTags.EMERALD },
+          'Ad Tech',
+          'Personalisation',
+          'ML',
+          'scikit-learn',
+          'mlflow',
+          'Deep Learning',
+          'tensorflow',
+          'Data Curation',
+          'Snowflake',
+          'Python',
+          'Scala',
         ]}
       />
       <ProjectCard
@@ -127,15 +127,15 @@ const ProjectList = () => (
           alt: 'Climate data forecasting with AI',
         }}
         tags={[
-          { label: 'Climate', color: ColorTags.LIME },
-          { label: 'ARCO', color: ColorTags.SKY },
-          { label: 'Zarr', color: ColorTags.SKY },
-          { label: 'ML', color: ColorTags.BLUE },
-          { label: 'scikit-learn', color: ColorTags.BLUE },
-          { label: 'Deep Learning', color: ColorTags.FUCHSIA },
-          { label: 'tensorflow', color: ColorTags.FUCHSIA },
-          { label: 'Data Curation', color: ColorTags.YELLOW },
-          { label: 'Python', color: ColorTags.VIOLET },
+          'Climate',
+          'ARCO',
+          'Zarr',
+          'ML',
+          'scikit-learn',
+          'Deep Learning',
+          'tensorflow',
+          'Data Curation',
+          'Python',
         ]}
         links={[
           {

@@ -1,6 +1,4 @@
-import { ColorTags, Tags } from 'astro-boilerplate-components';
-
-type TagEntry = { label: string; color: (typeof ColorTags)[keyof typeof ColorTags] };
+import { kindOf, sortTags } from '@/utils/tags';
 
 type LinkEntry = { label: string; href: string };
 
@@ -11,7 +9,7 @@ type Props = {
   solution: string;
   win?: string;
   img: { src: string; alt: string };
-  tags: TagEntry[];
+  tags: string[];
   links?: LinkEntry[];
   collaboration?: string;
 };
@@ -84,11 +82,11 @@ const ProjectCard = ({
           ))}
         </div>
       )}
-      <div className="flex flex-wrap gap-2">
-        {tags.map(({ label, color }) => (
-          <Tags key={label} color={color}>
+      <div className="flex flex-wrap gap-1.5">
+        {sortTags(tags).map((label) => (
+          <span key={label} className={`tag tag-${kindOf(label)}`}>
             {label}
-          </Tags>
+          </span>
         ))}
       </div>
     </div>
