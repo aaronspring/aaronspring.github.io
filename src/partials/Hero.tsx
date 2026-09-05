@@ -28,8 +28,8 @@ const Hero = () => (
             </li>
           </ul>
           <p className="mt-2">
-            9+ years delivering production geospatial data, LLM and ML systems
-            at scale. Freelance, based in Hamburg.
+            9+ years experience with geospatial data, LLM and ML systems
+            at scale. Freelancer based in Hamburg.
           </p>
         </>
       }

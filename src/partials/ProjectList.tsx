@@ -15,7 +15,7 @@ const ProjectList = () => (
         id="ai-product-engineering-workshops"
         name="AI Product Engineering Workshops"
         challenge="How to use hyped AI tools as an individual, a team, or a whole company?"
-        solution="A 2-day hands-on workshop on the practice of working with coding agents: the mechanics underneath, the role shift on top, the craft in between."
+        solution="A 2-day hands-on workshop on working with coding agents: the mechanics underneath, the role shift on top, the craft in between."
         win="Participants confidently use coding agents like Claude Code. The way of working outlasts the tool."
         img={{
           src: '/assets/images/project-agent-workshop.svg',
@@ -38,7 +38,7 @@ const ProjectList = () => (
       <ProjectCard
         id="arco-era5"
         name="ARCO ERA5"
-        challenge="Access the best climate reanalysis based on the most recent available data for maps and time-series use-cases."
+        challenge="Efficiently access the best up-to-date climate reanalysis."
         solution="Analysis-ready cloud-optimised (ARCO) ERA5 on Earthmover Arraylake, dual-chunked for map and time-series access, with Icechunk ACID transactions and an SLA on freshness updating daily."
         win="Customers can subscribe to a ready-to-use ERA5 dataset. Time-series and map queries execute in under 3 seconds."
         img={{
@@ -98,7 +98,7 @@ const ProjectList = () => (
       <ProjectCard
         id="ad-personalisation"
         name="Ad Personalisation"
-        challenge="Maximize revenue per impression by selecting the ad most relevant for the user."
+        challenge="Maximize revenue per impression by ranking ads by relevance for the user."
         solution="Upgraded from logistic regression to a deep neural network enabling ad-user personalisation."
         win="Improved click-through-ratio and revenue-per-impression by 2%."
         img={{ src: '/assets/images/project-ad-personalization.svg', alt: 'Ad user personalization' }}
@@ -120,7 +120,7 @@ const ProjectList = () => (
         id="s2s-forecast-challenge"
         name="S2S Forecast Challenge"
         challenge="Run a Kaggle-style challenge for sub-seasonal climate forecasts with low entry barriers"
-        solution="Curated training datasets and a verification pipeline on git & notebook-based renkulab.io for clean-data ML forecast submissions with standardised metrics."
+        solution="Curated training datasets and a verification pipeline based on git-lfs and renku notebooks for forecast submissions automatically evaluated on standardised metrics."
         collaboration="Swiss Data Science Center (SDSC), World Meteorological Organization (WMO) and European Centre for Medium-Range Weather Forecasts (ECMWF)."
         img={{
           src: '/assets/images/project-climate-forecast.svg',
