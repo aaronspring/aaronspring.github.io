@@ -26,7 +26,14 @@ const CTA = () => (
           </svg>
         </a>
         <a href="https://github.com/aaronspring" target="_blank" rel="noopener noreferrer">
-          <HeroSocial src="/assets/images/github-icon.svg" alt="GitHub" />
+          {/* Same 12-box as the others, padded so the mark reads at the
+              optical size of the LinkedIn glyph, which carries its own margin. */}
+          <img
+            className="h-12 w-12 p-1.5 hover:translate-y-1"
+            src="/assets/images/github-icon.svg"
+            alt="GitHub"
+            loading="lazy"
+          />
         </a>
       </div>
     </div>
