@@ -23,7 +23,7 @@ const tagKinds: Record<string, TagKindValue> = {
   'Ad Tech': TagKind.DOMAIN,
   Recruiting: TagKind.DOMAIN,
   'Job Candidate Matching': TagKind.DOMAIN,
-  'Developer Enablement': TagKind.DOMAIN,
+  Training: TagKind.DOMAIN,
 
   // Skills and methods
   ML: TagKind.SKILL,
@@ -42,6 +42,7 @@ const tagKinds: Record<string, TagKindValue> = {
   Python: TagKind.TOOL,
   Scala: TagKind.TOOL,
   'Claude Code': TagKind.TOOL,
+  'Claude Routines': TagKind.TOOL,
   Zarr: TagKind.TOOL,
   Icechunk: TagKind.TOOL,
   Arraylake: TagKind.TOOL,
@@ -56,7 +57,7 @@ const tagKinds: Record<string, TagKindValue> = {
   'scikit-learn': TagKind.TOOL,
   mlflow: TagKind.TOOL,
   Streamlit: TagKind.TOOL,
-  'GitHub Actions': TagKind.TOOL,
+  'Claude Routines': TagKind.TOOL,
 };
 
 const kindOrder: TagKindValue[] = [TagKind.DOMAIN, TagKind.SKILL, TagKind.TOOL];

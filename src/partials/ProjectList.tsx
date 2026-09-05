@@ -39,7 +39,7 @@ const ProjectList = () => (
           src: '/assets/images/project-agent-workshop.svg',
           alt: 'Hands-on coding agent workshop',
         }}
-        tags={['Claude Code', 'LLM', 'Tracing', 'Streamlit', 'Python']}
+        tags={['Training', 'Claude Code', 'LLM', 'Tracing', 'Streamlit']}
         links={[
           {
             label: 'Training at Hackers & Wizards',
@@ -65,7 +65,7 @@ const ProjectList = () => (
           'Arraylake',
           'AWS',
           'Coiled',
-          'GitHub Actions',
+          'Claude Routines',
           'Claude Code',
           'Python',
         ]}
@@ -102,6 +102,7 @@ const ProjectList = () => (
           'Tracing',
           'langfuse',
           'Streamlit',
+          'Claude Code',
           'Data Curation',
           'metaflow',
           'Snowflake',
