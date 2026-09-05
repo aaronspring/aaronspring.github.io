@@ -11,11 +11,13 @@ const CTA = () => (
         <a href="https://www.linkedin.com/in/springaaron/" target="_blank" rel="noopener noreferrer">
           <HeroSocial src="/assets/images/linkedin-icon.png" alt="LinkedIn" />
         </a>
-        <a href="mailto:draaronspring@proton.me">
+        <a href="mailto:draaronspring@proton.me" aria-label="Email">
           <svg
             className="h-12 w-12 hover:translate-y-1 stroke-cyan-500"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
+            aria-hidden="true"
+            focusable="false"
             fill="none"
             strokeWidth="1.5"
             strokeLinecap="round"
