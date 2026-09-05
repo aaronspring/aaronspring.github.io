@@ -66,11 +66,31 @@ const { description } = AppConfig;
         }
       }
 
+      // A #tag=<label> hash selects that tag and scrolls the list into view,
+      // so prose elsewhere on the page can link straight into a filter.
+      function applyHash() {
+        var match = /^#tag=(.+)$/.exec(location.hash);
+        if (!match) return;
+        active = decodeURIComponent(match[1]);
+        apply();
+        var section = document.getElementById('projects') || list;
+        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+
+      applyHash();
+      // Runs after the click handler below has cleared the old selection,
+      // so following a tag link from anywhere on the page lands filtered.
+      window.addEventListener('hashchange', applyHash);
+
       // Listening on the document, so a click anywhere outside the tags
       // drops the selection the same way Clear or a second click does.
       document.addEventListener('click', function (event) {
         var target = event.target;
         if (!target || !target.closest) return;
+
+        // A link into a filter is not an "outside" click: let its hash set
+        // the selection instead of clearing it on the way there.
+        if (target.closest('a[href^="#tag="]')) return;
 
         var tag = target.closest('.tag[data-tag]');
         if (tag && list.contains(tag)) {

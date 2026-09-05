@@ -2,6 +2,7 @@ import { GradientText, Section } from 'astro-boilerplate-components';
 
 const valueSections = [
   {
+    id: 'value-geospatial',
     role: 'Geospatial Data Engineer',
     bullets: [
       'Identify datasets for cloud-based workflows in climate risk and energy domains',
@@ -15,6 +16,7 @@ const valueSections = [
     ],
   },
   {
+    id: 'value-ai',
     role: 'AI Engineer',
     bullets: [
       'Identify GenAI use cases from #weNeedToDoAI',
@@ -31,6 +33,7 @@ const valueSections = [
     ],
   },
   {
+    id: 'value-ml',
     role: 'ML Engineer',
     bullets: [
       'Identify use cases for automated decision-making',
@@ -52,7 +55,11 @@ const ValueProp = () => (
   >
     <div className="flex flex-col gap-6">
       {valueSections.map((section) => (
-        <div className="rounded-lg border border-slate-700 bg-slate-800 p-6">
+        <div
+          key={section.id}
+          id={section.id}
+          className="scroll-mt-24 rounded-lg border border-slate-700 bg-slate-800 p-6"
+        >
           <h2 className="text-lg font-semibold text-cyan-400">{section.role}</h2>
           <ul className="mt-3 list-disc space-y-1 pl-5 text-sm text-gray-300">
             {section.bullets.map((b) => (
