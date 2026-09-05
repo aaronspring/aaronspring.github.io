@@ -24,8 +24,7 @@ const { description } = AppConfig;
 
   <script is:inline>
     // Clicking a tag highlights the projects carrying it and dims the rest.
-    // One tag is active at a time; clicking it again, or anywhere else on
-    // the page, resets the selection and hides the filter bar.
+    // One tag is active at a time; clicking it again (or Clear) resets.
     (function () {
       var list = document.getElementById('project-list');
       if (!list) return;
@@ -67,21 +66,28 @@ const { description } = AppConfig;
         }
       }
 
+      // Listening on the document, so a click anywhere outside the tags
+      // drops the selection the same way Clear or a second click does.
       document.addEventListener('click', function (event) {
         var target = event.target;
-        var tag =
-          target && target.closest ? target.closest('.tag[data-tag]') : null;
+        if (!target || !target.closest) return;
 
-        if (tag) {
+        var tag = target.closest('.tag[data-tag]');
+        if (tag && list.contains(tag)) {
           var label = tag.getAttribute('data-tag');
           active = active === label ? null : label;
           apply();
           return;
         }
 
-        // Anything else — the Clear link, a card, the page background —
-        // drops the selection.
         if (active !== null) {
+          active = null;
+          apply();
+        }
+      });
+
+      document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape' && active !== null) {
           active = null;
           apply();
         }
