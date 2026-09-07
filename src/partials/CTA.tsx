@@ -4,8 +4,10 @@ const CTA = () => (
   <Section>
     <div className="flex flex-col items-center gap-4 rounded-xl bg-slate-800 px-8 py-12 text-center">
       <h2 className="text-3xl font-bold text-white">Get in touch</h2>
-      <p className="text-gray-400">
-        Interested in working together? Reach out and I'll get back to you.
+      <p className="max-w-xl text-gray-400">
+        Send me your dataset or your use case. You get a written assessment and
+        a proposed first step within two working days. A 30-minute call costs
+        nothing.
       </p>
       <div className="flex gap-4">
         <a href="https://www.linkedin.com/in/springaaron/" target="_blank" rel="noopener noreferrer">
