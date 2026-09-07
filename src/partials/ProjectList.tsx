@@ -107,6 +107,7 @@ const ProjectList = () => (
           'Streamlit',
           'Claude Code',
           'Data Curation',
+          'Data Labeling',
           'metaflow',
           'Snowflake',
           'Personalisation',

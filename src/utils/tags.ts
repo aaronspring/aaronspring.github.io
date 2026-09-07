@@ -34,6 +34,7 @@ const tagKinds: Record<string, TagKindValue> = {
   'Fine-tuning': TagKind.SKILL,
   Personalisation: TagKind.SKILL,
   'Data Curation': TagKind.SKILL,
+  'Data Labeling': TagKind.SKILL,
   ARCO: TagKind.SKILL,
   'Evals & Tracing': TagKind.SKILL,
   Tracing: TagKind.SKILL,
