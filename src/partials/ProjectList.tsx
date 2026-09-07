@@ -120,7 +120,7 @@ const ProjectList = () => (
         name="Ad Personalisation"
         challenge="Maximize revenue per impression by ranking ads by relevance for the user."
         solution="Upgraded from logistic regression to a deep neural network enabling ad-user personalisation."
-        win="Improved click-through-ratio and revenue-per-impression by 2% in production."
+        win="Improved click-through-rate by 10–15% and revenue-per-impression by 2% in production."
         img={{
           src: '/assets/images/project-ad-personalization.svg',
           alt: 'Ad user personalization',

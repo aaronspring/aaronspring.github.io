@@ -58,7 +58,6 @@ const tagKinds: Record<string, TagKindValue> = {
   'scikit-learn': TagKind.TOOL,
   mlflow: TagKind.TOOL,
   Streamlit: TagKind.TOOL,
-  'Claude Routines': TagKind.TOOL,
 };
 
 const kindOrder: TagKindValue[] = [TagKind.DOMAIN, TagKind.SKILL, TagKind.TOOL];
