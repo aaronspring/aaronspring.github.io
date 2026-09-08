@@ -49,6 +49,10 @@ const {
       // (e.g. /#value, /#projects) show up as distinct pages in GoatCounter.
       window.goatcounter = {
         path: function (p) {
+          // Click events (data-goatcounter-click) pass their own name rather
+          // than a path, and the hashchange count below already carries the
+          // hash: only a plain page path gets the #anchor appended.
+          if (!p || p.charAt(0) !== '/' || p.indexOf('#') !== -1) return p;
           return p + location.hash;
         },
       };

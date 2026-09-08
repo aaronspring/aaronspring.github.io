@@ -8,10 +8,21 @@ const CTA = () => (
         Interested in working together? Reach out and I'll get back to you.
       </p>
       <div className="flex gap-4">
-        <a href="https://www.linkedin.com/in/springaaron/" target="_blank" rel="noopener noreferrer">
+        <a
+          href="https://www.linkedin.com/in/springaaron/"
+          target="_blank"
+          rel="noopener noreferrer"
+          data-goatcounter-click="contact-linkedin"
+          data-goatcounter-title="Contact: LinkedIn"
+        >
           <HeroSocial src="/assets/images/linkedin-icon.png" alt="LinkedIn" />
         </a>
-        <a href="mailto:draaronspring@proton.me" aria-label="Email">
+        <a
+          href="mailto:draaronspring@proton.me"
+          aria-label="Email"
+          data-goatcounter-click="contact-email"
+          data-goatcounter-title="Contact: Email"
+        >
           <svg
             className="h-12 w-12 hover:translate-y-1 stroke-cyan-500"
             xmlns="http://www.w3.org/2000/svg"
@@ -27,7 +38,13 @@ const CTA = () => (
             <path d="M2 7l10 7 10-7" />
           </svg>
         </a>
-        <a href="https://github.com/aaronspring" target="_blank" rel="noopener noreferrer">
+        <a
+          href="https://github.com/aaronspring"
+          target="_blank"
+          rel="noopener noreferrer"
+          data-goatcounter-click="contact-github"
+          data-goatcounter-title="Contact: GitHub"
+        >
           {/* Same 12-box as the others, padded so the mark reads at the
               optical size of the LinkedIn glyph, which carries its own margin. */}
           <img
