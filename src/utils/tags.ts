@@ -19,7 +19,8 @@ export type TagKindValue = (typeof TagKind)[keyof typeof TagKind];
 
 const tagKinds: Record<string, TagKindValue> = {
   // Domains
-  Climate: TagKind.DOMAIN,
+  Weather: TagKind.DOMAIN,
+  Energy: TagKind.DOMAIN,
   'Ad Tech': TagKind.DOMAIN,
   Recruiting: TagKind.DOMAIN,
   'Job Candidate Matching': TagKind.DOMAIN,

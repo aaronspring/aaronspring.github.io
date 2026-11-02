@@ -36,7 +36,7 @@ const Hero = () => (
           </ul>
           <p className="mt-2">
             <a className={link} href="/work/">9+ years</a> experience with{' '}
-            <a className={link} href="/#tag=Climate">geospatial data</a>,{' '}
+            <a className={link} href="/#tag=Weather">geospatial data</a>,{' '}
             <a className={link} href="/#tag=LLM">LLM</a> and{' '}
             <a className={link} href="/#tag=ML">ML</a> systems at scale.
           </p>
@@ -59,6 +59,7 @@ const Hero = () => (
           fetchPriority="high"
         />
       }
+      socialButtons={null}
     />
   </Section>
 );

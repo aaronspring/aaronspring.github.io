@@ -33,6 +33,75 @@ const ProjectList = () => (
   >
     <div className="flex flex-col gap-6" id="project-list">
       <ProjectCard
+        id="ai-solution-architect-weather"
+        name="AI Solution Architect for Weather and Renewables"
+        challenge="How to create AI weather model forecasts fast?"
+        solution={
+          <>
+            Run your own low-latency AI weather model pipeline:
+            <ul className="mt-1 list-disc space-y-1 pl-5">
+              <li>
+                <a
+                  className="text-cyan-400 hover:text-cyan-300"
+                  href="https://nvidia-gtc-berlin-2026.earthmover.io/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  StormscopeEU nowcasting
+                </a>{' '}
+                from EUMETSAT satellite data at a 10-minute forecast step,
+                reaching users&apos; phones with 10 minutes latency
+              </li>
+              <li>
+                <a
+                  className="text-cyan-400 hover:text-cyan-300"
+                  href="https://huggingface.co/spaces/hugging-science/ai-weather-models-with-earthmover-data"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  ECMWF AIFS or WeatherNext2
+                </a>{' '}
+                run from Earthmover initial conditions in under 30 seconds
+              </li>
+            </ul>
+          </>
+        }
+        win="Own the lowest-latency forecasts for a competitive edge in energy markets."
+        collaboration="NVIDIA Earth-2, Earthmover and Hugging Face."
+        img={{
+          src: '/assets/images/project-weather-renewables.svg',
+          alt: 'Satellite feeding an AI weather forecast for wind and solar',
+        }}
+        tags={[
+          'Weather',
+          'Energy',
+          'Deep Learning',
+          'ARCO',
+          'Icechunk',
+          'Arraylake',
+          'Zarr',
+          'Python',
+        ]}
+        links={[
+          {
+            label: 'NVIDIA blog',
+            href: 'https://blogs.nvidia.com/blog/europe-earth-2-open-models-weather-climate-prediction/',
+          },
+          {
+            label: 'Nowcasting pipeline',
+            href: 'https://www.earthmover.io/blog/building-a-low-latency-earth-2-nowcasting-pipeline-with-earthmover',
+          },
+          {
+            label: 'Hugging Face blog',
+            href: 'https://huggingface.co/blog/hugging-science/earthmover-hf',
+          },
+          {
+            label: 'Running open AI weather models',
+            href: 'https://www.earthmover.io/blog/making-open-source-ai-weather-forecasting-models-easy-to-run',
+          },
+        ]}
+      />
+      <ProjectCard
         id="ai-product-engineering-workshops"
         name="AI Product Engineering Workshops"
         challenge="How to use hyped AI tools as an individual, a team, or a whole company?"
@@ -61,7 +130,7 @@ const ProjectList = () => (
           alt: 'Climate array data in the cloud',
         }}
         tags={[
-          'Climate',
+          'Weather',
           'ARCO',
           'Zarr',
           'Icechunk',
@@ -150,7 +219,7 @@ const ProjectList = () => (
           alt: 'Climate data forecasting with AI',
         }}
         tags={[
-          'Climate',
+          'Weather',
           'ARCO',
           'Zarr',
           'ML',
