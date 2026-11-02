@@ -59,6 +59,7 @@ const Hero = () => (
           fetchPriority="high"
         />
       }
+      socialButtons={null}
     />
   </Section>
 );
