@@ -33,6 +33,50 @@ const ProjectList = () => (
   >
     <div className="flex flex-col gap-6" id="project-list">
       <ProjectCard
+        id="ai-solution-architect-weather"
+        name="AI Solution Architect for Weather and Renewables"
+        challenge="How to create AI weather model forecasts fast?"
+        solution="Run your own low-latency AI weather model pipeline: StormscopeEU nowcasting from EUMETSAT satellite data at a 10-minute forecast step, reaching users' phones with 10 minutes latency; ECMWF AIFS or WeatherNext2 run from Earthmover initial conditions in under 30 seconds."
+        win="Own the lowest-latency forecasts for a competitive edge in energy markets."
+        collaboration="NVIDIA Earth-2, Earthmover and Hugging Face."
+        img={{
+          src: '/assets/images/project-weather-renewables.svg',
+          alt: 'Satellite feeding an AI weather forecast for wind and solar',
+        }}
+        tags={[
+          'Weather',
+          'Energy',
+          'Deep Learning',
+          'ARCO',
+          'Earth-2',
+          'AIFS',
+          'WeatherNext2',
+          'Hugging Face',
+          'Icechunk',
+          'Arraylake',
+          'Zarr',
+          'Python',
+        ]}
+        links={[
+          {
+            label: 'NVIDIA blog',
+            href: 'https://blogs.nvidia.com/blog/europe-earth-2-open-models-weather-climate-prediction/',
+          },
+          {
+            label: 'Nowcasting pipeline',
+            href: 'https://www.earthmover.io/blog/building-a-low-latency-earth-2-nowcasting-pipeline-with-earthmover',
+          },
+          {
+            label: 'Hugging Face blog',
+            href: 'https://huggingface.co/blog/hugging-science/earthmover-hf',
+          },
+          {
+            label: 'Running open AI weather models',
+            href: 'https://www.earthmover.io/blog/making-open-source-ai-weather-forecasting-models-easy-to-run',
+          },
+        ]}
+      />
+      <ProjectCard
         id="ai-product-engineering-workshops"
         name="AI Product Engineering Workshops"
         challenge="How to use hyped AI tools as an individual, a team, or a whole company?"

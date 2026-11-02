@@ -3,7 +3,7 @@ import { GradientText, Section } from 'astro-boilerplate-components';
 const valueSections = [
   {
     id: 'value-geospatial',
-    role: 'Geospatial Data Engineer',
+    role: 'Geospatial Cloud Data Engineer',
     bullets: [
       'Identify datasets for cloud-based workflows in climate risk and energy domains',
       'Build analysis-ready, cloud-optimised (ARCO) climate datasets with inherent safety, consistency and reproducibility',
@@ -11,6 +11,10 @@ const valueSections = [
       'Optimise storage, chunking, throughput and cost',
     ],
     projects: [
+      {
+        name: 'AI Solution Architect for Weather and Renewables',
+        href: '#ai-solution-architect-weather',
+      },
       { name: 'ARCO ERA5', href: '#arco-era5' },
       { name: 'S2S Forecast Challenge', href: '#s2s-forecast-challenge' },
     ],
