@@ -36,7 +36,36 @@ const ProjectList = () => (
         id="ai-solution-architect-weather"
         name="AI Solution Architect for Weather and Renewables"
         challenge="How to create AI weather model forecasts fast?"
-        solution="Run your own low-latency AI weather model pipeline: StormscopeEU nowcasting from EUMETSAT satellite data at a 10-minute forecast step, reaching users' phones with 10 minutes latency; ECMWF AIFS or WeatherNext2 run from Earthmover initial conditions in under 30 seconds."
+        solution={
+          <>
+            Run your own low-latency AI weather model pipeline:
+            <ul className="mt-1 list-disc space-y-1 pl-5">
+              <li>
+                <a
+                  className="text-cyan-400 hover:text-cyan-300"
+                  href="https://nvidia-gtc-berlin-2026.earthmover.io/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  StormscopeEU nowcasting
+                </a>{' '}
+                from EUMETSAT satellite data at a 10-minute forecast step,
+                reaching users&apos; phones with 10 minutes latency
+              </li>
+              <li>
+                <a
+                  className="text-cyan-400 hover:text-cyan-300"
+                  href="https://huggingface.co/spaces/hugging-science/ai-weather-models-with-earthmover-data"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  ECMWF AIFS or WeatherNext2
+                </a>{' '}
+                run from Earthmover initial conditions in under 30 seconds
+              </li>
+            </ul>
+          </>
+        }
         win="Own the lowest-latency forecasts for a competitive edge in energy markets."
         collaboration="NVIDIA Earth-2, Earthmover and Hugging Face."
         img={{

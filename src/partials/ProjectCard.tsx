@@ -1,3 +1,5 @@
+import type { ReactNode } from 'react';
+
 import { kindOf, sortTags } from '@/utils/tags';
 
 type LinkEntry = { label: string; href: string };
@@ -6,7 +8,7 @@ type Props = {
   id: string;
   name: string;
   challenge: string;
-  solution: string;
+  solution: ReactNode;
   win?: string;
   img: { src: string; alt: string };
   tags: string[];
@@ -50,7 +52,7 @@ const ProjectCard = ({
         <p className="text-xs font-semibold uppercase tracking-wider text-cyan-400">
           Solution
         </p>
-        <p className="mt-1 text-sm text-gray-300">{solution}</p>
+        <div className="mt-1 text-sm text-gray-300">{solution}</div>
       </div>
       {win && (
         <div>
