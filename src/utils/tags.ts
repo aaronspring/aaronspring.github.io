@@ -19,7 +19,6 @@ export type TagKindValue = (typeof TagKind)[keyof typeof TagKind];
 
 const tagKinds: Record<string, TagKindValue> = {
   // Domains
-  Climate: TagKind.DOMAIN,
   Weather: TagKind.DOMAIN,
   Energy: TagKind.DOMAIN,
   'Ad Tech': TagKind.DOMAIN,
@@ -60,10 +59,6 @@ const tagKinds: Record<string, TagKindValue> = {
   'scikit-learn': TagKind.TOOL,
   mlflow: TagKind.TOOL,
   Streamlit: TagKind.TOOL,
-  'Earth-2': TagKind.TOOL,
-  AIFS: TagKind.TOOL,
-  WeatherNext2: TagKind.TOOL,
-  'Hugging Face': TagKind.TOOL,
 };
 
 const kindOrder: TagKindValue[] = [TagKind.DOMAIN, TagKind.SKILL, TagKind.TOOL];

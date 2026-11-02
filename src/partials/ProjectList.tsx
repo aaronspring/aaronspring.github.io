@@ -48,10 +48,6 @@ const ProjectList = () => (
           'Energy',
           'Deep Learning',
           'ARCO',
-          'Earth-2',
-          'AIFS',
-          'WeatherNext2',
-          'Hugging Face',
           'Icechunk',
           'Arraylake',
           'Zarr',
@@ -105,7 +101,7 @@ const ProjectList = () => (
           alt: 'Climate array data in the cloud',
         }}
         tags={[
-          'Climate',
+          'Weather',
           'ARCO',
           'Zarr',
           'Icechunk',
@@ -194,7 +190,7 @@ const ProjectList = () => (
           alt: 'Climate data forecasting with AI',
         }}
         tags={[
-          'Climate',
+          'Weather',
           'ARCO',
           'Zarr',
           'ML',
