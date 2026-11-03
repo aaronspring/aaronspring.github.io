@@ -115,7 +115,11 @@ const ProjectList = () => (
         links={[
           {
             label: 'Training at Hackers & Wizards',
-            href: 'https://www.hackersandwizards.dev/training/',
+            href: 'https://www.hackersandwizards.dev/trainings/agentic-engineering-for-developers/',
+          },
+          {
+            label: 'Hackers & Wizards Profile',
+            href: 'https://www.hackersandwizards.dev/team/aaron-spring/',
           },
         ]}
       />
