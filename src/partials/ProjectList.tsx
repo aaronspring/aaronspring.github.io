@@ -121,6 +121,10 @@ const ProjectList = () => (
             label: 'Hackers & Wizards Profile',
             href: 'https://www.hackersandwizards.dev/team/aaron-spring/',
           },
+          {
+            label: 'Workshop Example',
+            href: 'https://lnkd.in/p/dz-t9gUa',
+          },
         ]}
       />
       <ProjectCard
