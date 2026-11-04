@@ -34,7 +34,7 @@ const costs = [
   },
   {
     item: 'Storage (~16 GB / day, S3 standard)',
-    amount: '< 1k USD in year one',
+    amount: '< 1k USD',
     per: 'per member',
   },
   { item: 'My work', amount: 'on request' },
@@ -42,7 +42,7 @@ const costs = [
 
 const steps = [
   { title: 'Discuss', text: 'A call with tech and business leads about the potential impact of low-latency high-resolution nowcasts.' },
-  { title: 'Test offline', text: 'Measure the benefit on 17 days of existing demo data against your existing weather forecasts.' },
+  { title: 'Backtest', text: 'Measure the benefit on 17 days of existing demo data against your existing weather forecasts.' },
   { title: 'Run live for 2 weeks', text: 'Operational nowcasts on new satellite data, delivered to your systems.' },
   { title: 'Go to production', text: 'Hardened pipeline with monitoring, running in your cloud.' },
 ];
@@ -169,7 +169,7 @@ const steps = [
     </section>
 
     <section class="mt-10">
-      <h2 class="text-xl font-semibold text-gray-100">Next steps</h2>
+      <h2 class="text-xl font-semibold text-gray-100">Project milestones</h2>
       <ol class="mt-3 space-y-3">
         {steps.map((s, i) => (
           <li class="flex gap-3">
