@@ -30,13 +30,13 @@ const costs = [
     track: 'proposal-brev-gpu',
     linkLabel: 'H200 on NVIDIA Brev, Europe',
     amount: '6–7 USD / h ≈ 53–61k USD / year',
-    perMember: true,
+    per: 'per GPU · probably 2 members sequentially',
     note: 'Conservative: solar only needs daylight runs, but a GPU is not reliably available on demand. Together we investigate the latency/price tradeoff, e.g. cheaper GPUs or daylight-only runs at slightly higher latency.',
   },
   {
     item: 'Storage (~16 GB / day, S3 standard)',
     amount: '< 1k USD in year one',
-    perMember: true,
+    per: 'per member',
   },
   { item: 'My work', amount: 'on request' },
 ];
@@ -149,7 +149,7 @@ const steps = [
                   {c.href ? (
                     <a class="text-cyan-400 hover:text-cyan-300" href={c.href} target="_blank" rel="noopener noreferrer" data-goatcounter-click={c.track} data-goatcounter-title={`Proposal: ${c.item}`}>{c.amount}</a>
                   ) : c.amount}
-                  {c.perMember && <p class="text-xs font-normal text-gray-400">per member</p>}
+                  {c.per && <p class="text-xs font-normal text-gray-400">{c.per}</p>}
                 </td>
               </tr>
             ))}
