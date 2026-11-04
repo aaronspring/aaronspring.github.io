@@ -61,6 +61,7 @@ const steps = [
       resolution, built from EUMETSAT satellite data with NVIDIA Earth-2
       StormscopeEU. I set it up in your cloud.
     </p>
+    <p class="mt-4 text-lg font-semibold text-gray-100">How much latency does your weather signal have?</p>
 
     <div class="mt-6 grid gap-4 sm:grid-cols-3">
       {audiences.map((a) => (
@@ -72,7 +73,6 @@ const steps = [
     </div>
 
     <section class="mt-10">
-      <h2 class="text-xl font-semibold text-gray-100">How much latency does your weather signal have?</h2>
       <!-- The dashboard lays out at a fixed 1920x1080; show only its map panel (x 24-1356, y 100-928). -->
       <div id="nowcast-crop" class="relative mt-4 overflow-hidden rounded-lg border border-slate-700" style="aspect-ratio: 1332 / 828;">
         <iframe
