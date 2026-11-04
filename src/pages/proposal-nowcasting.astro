@@ -21,25 +21,28 @@ const costs = [
   {
     item: 'EUMETSAT data licence',
     href: 'https://user.eumetsat.int/resources/user-guides/data-registration-and-licensing',
+    track: 'proposal-eumetsat-licence',
     amount: '8k EUR / year',
   },
   {
-    item: 'GPU (one NVIDIA B200, running all year)',
-    href: 'https://brev.nvidia.com',
-    linkLabel: 'B200 on NVIDIA Brev, Europe',
+    item: 'GPU (one NVIDIA H200, running all year)',
+    href: 'https://brev.nvidia.com/environment/new/public?gpu=H200',
+    track: 'proposal-brev-gpu',
     amount: '6–7 USD / h ≈ 53–61k USD / year',
-    note: 'Conservative: solar only needs daylight runs, but a GPU is not reliably available on demand. Together we investigate the latency/price tradeoff, e.g. cheaper GPUs or daylight-only runs at slightly higher latency.',
+    per: 'per GPU · 2 members sequentially every 10 min',
+    note: 'Conservative: solar only needs daylight runs, but a GPU is not reliably available on demand. Together we investigate the latency/price tradeoff, e.g. cheaper GPUs at slightly higher latency or daylight-only runs.',
   },
   {
     item: 'Storage (~16 GB / day, S3 standard)',
-    amount: '< 1k USD in year one',
+    amount: '< 1k USD',
+    per: 'per member',
   },
   { item: 'My work', amount: 'on request' },
 ];
 
 const steps = [
   { title: 'Discuss', text: 'A call with tech and business leads about the potential impact of low-latency high-resolution nowcasts.' },
-  { title: 'Test offline', text: 'Measure the benefit on 17 days of existing demo data against your existing weather forecasts.' },
+  { title: 'Backtest', text: 'Measure the benefit on 17 days of existing demo data against your existing weather forecasts.' },
   { title: 'Run live for 2 weeks', text: 'Operational nowcasts on new satellite data, delivered to your systems.' },
   { title: 'Go to production', text: 'Hardened pipeline with monitoring, running in your cloud.' },
 ];
@@ -54,12 +57,13 @@ const steps = [
   <div class="mx-auto max-w-screen-md px-3 py-6">
     <p class="text-xs font-semibold uppercase tracking-wider text-cyan-400">Proposal</p>
     <h1 class="mt-2 text-3xl font-bold text-white">
-      Solar nowcasting <span class="bg-gradient-to-br from-sky-500 to-cyan-400 bg-clip-text text-transparent">for energy markets</span>
+      Solar nowcasting for energy markets
     </h1>
     <p class="mt-4 text-gray-300">
       AI nowcasts of solar output for the next hours, at 10-minute and 2 km
       resolution, built from EUMETSAT satellite data with NVIDIA Earth-2
-      StormscopeEU. I set it up in your cloud.
+      StormscopeEU. I set it up in your cloud. How much latency does your
+      weather signal have?
     </p>
 
     <div class="mt-6 grid gap-4 sm:grid-cols-3">
@@ -72,8 +76,6 @@ const steps = [
     </div>
 
     <section class="mt-10">
-      <h2 class="text-xl font-semibold text-gray-100">What's new</h2>
-      <p class="mt-3 text-gray-300"><strong class="text-gray-100">10 minutes latency</strong> from satellite image to forecast, at <strong class="text-gray-100">10-minute and 2 km resolution</strong>, compared to numerical weather predictions lagged by 6 hours at 1-hour resolution.</p>
       <!-- The dashboard lays out at a fixed 1920x1080; show only its map panel (x 24-1356, y 100-928). -->
       <div id="nowcast-crop" class="relative mt-4 overflow-hidden rounded-lg border border-slate-700" style="aspect-ratio: 1332 / 828;">
         <iframe
@@ -93,15 +95,40 @@ const steps = [
           new ResizeObserver(fit).observe(crop);
           fit();
         }
+        // GoatCounter events the click attributes cannot capture.
+        const track = (path: string, title: string) => {
+          const gc = (window as any).goatcounter;
+          if (gc && gc.count) gc.count({ path, title, event: true });
+        };
+        // Clicking into the cross-origin map iframe moves focus out of this
+        // window: count the first interaction with the live map.
+        let mapUsed = false;
+        addEventListener('blur', () => {
+          if (!mapUsed && document.activeElement?.tagName === 'IFRAME') {
+            mapUsed = true;
+            track('proposal-map-interact', 'Proposal: Interacted with live map');
+          }
+        });
+        // Count readers who scroll down to the "Let's talk" section.
+        const end = document.getElementById('proposal-end');
+        if (end) {
+          const io = new IntersectionObserver((entries) => {
+            if (entries.some((e) => e.isIntersecting)) {
+              io.disconnect();
+              track('proposal-read-to-end', 'Proposal: Scrolled to contact');
+            }
+          });
+          io.observe(end);
+        }
       </script>
       <p class="mt-1 text-xs text-gray-400">
         Live StormscopeEU nowcast over Europe.
-        <a class="text-cyan-400 hover:text-cyan-300" href="https://nvidia-gtc-berlin-2026.earthmover.io/?variable=true_color" target="_blank" rel="noopener noreferrer">Open full screen</a>
+        <a class="text-cyan-400 hover:text-cyan-300" href="https://nvidia-gtc-berlin-2026.earthmover.io/?variable=true_color" target="_blank" rel="noopener noreferrer" data-goatcounter-click="proposal-map-fullscreen" data-goatcounter-title="Proposal: Map full screen">Open full screen</a>
       </p>
       <p class="mt-3 text-sm text-gray-400">
         Background:
-        <a class="text-cyan-400 hover:text-cyan-300" href="https://www.earthmover.io/blog/building-a-low-latency-earth-2-nowcasting-pipeline-with-earthmover" target="_blank" rel="noopener noreferrer">Blog post</a>,
-        <a class="text-cyan-400 hover:text-cyan-300" href="https://nvidia-gtc-berlin-2026.earthmover.io/" target="_blank" rel="noopener noreferrer">live demo</a>.
+        <a class="text-cyan-400 hover:text-cyan-300" href="https://www.earthmover.io/blog/building-a-low-latency-earth-2-nowcasting-pipeline-with-earthmover" target="_blank" rel="noopener noreferrer" data-goatcounter-click="proposal-blog" data-goatcounter-title="Proposal: Blog post">Blog post</a>,
+        <a class="text-cyan-400 hover:text-cyan-300" href="https://nvidia-gtc-berlin-2026.earthmover.io/" target="_blank" rel="noopener noreferrer" data-goatcounter-click="proposal-live-demo" data-goatcounter-title="Proposal: Live demo">live demo</a>.
       </p>
     </section>
 
@@ -113,15 +140,16 @@ const steps = [
             {costs.map((c) => (
               <tr class="border-b border-slate-700 last:border-0">
                 <td class="bg-slate-800 p-3 align-top text-gray-300">
-                  {c.href && !c.linkLabel ? (
-                    <a class="text-cyan-400 hover:text-cyan-300" href={c.href} target="_blank" rel="noopener noreferrer">{c.item}</a>
-                  ) : c.item}
-                  {c.linkLabel && (
-                    <a class="ml-1 text-xs text-cyan-400 hover:text-cyan-300" href={c.href} target="_blank" rel="noopener noreferrer">({c.linkLabel})</a>
-                  )}
+                  {c.item}
+                  {c.linkLabel && <span class="ml-1 text-xs text-gray-400">({c.linkLabel})</span>}
                   {c.note && <p class="mt-1 text-xs text-gray-400">{c.note}</p>}
                 </td>
-                <td class="whitespace-nowrap bg-slate-800 p-3 align-top font-medium text-gray-100">{c.amount}</td>
+                <td class="whitespace-nowrap bg-slate-800 p-3 align-top font-medium text-gray-100">
+                  {c.href ? (
+                    <a class="text-cyan-400 hover:text-cyan-300" href={c.href} target="_blank" rel="noopener noreferrer" data-goatcounter-click={c.track} data-goatcounter-title={`Proposal: ${c.item}`}>{c.amount}</a>
+                  ) : c.amount}
+                  {c.per && <p class="text-xs font-normal text-gray-400">{c.per}</p>}
+                </td>
               </tr>
             ))}
           </tbody>
@@ -135,13 +163,13 @@ const steps = [
         The value depends on your portfolio and the decisions you make with it,
         so let's find it out together.
         Outputs for
-        <a class="text-cyan-400 hover:text-cyan-300" href="https://app.earthmover.io/gtc-berlin/stormscope-eu_gtc_berlin_2026_EU_region" target="_blank" rel="noopener noreferrer">17 demo days</a>
+        <a class="text-cyan-400 hover:text-cyan-300" href="https://app.earthmover.io/gtc-berlin/stormscope-eu_gtc_berlin_2026_EU_region" target="_blank" rel="noopener noreferrer" data-goatcounter-click="proposal-demo-data" data-goatcounter-title="Proposal: 17 demo days">17 demo days</a>
         are available.
       </p>
     </section>
 
     <section class="mt-10">
-      <h2 class="text-xl font-semibold text-gray-100">Next steps</h2>
+      <h2 class="text-xl font-semibold text-gray-100">Project milestones</h2>
       <ol class="mt-3 space-y-3">
         {steps.map((s, i) => (
           <li class="flex gap-3">
@@ -163,7 +191,7 @@ const steps = [
       </p>
     </section>
 
-    <section class="mt-10 flex flex-col items-center gap-4 rounded-xl bg-slate-800 px-6 py-10 text-center">
+    <section id="proposal-end" class="mt-10 flex flex-col items-center gap-4 rounded-xl bg-slate-800 px-6 py-10 text-center">
       <h2 class="text-2xl font-bold text-white">Let's talk</h2>
       <p class="text-gray-400">Share this internally and book a call with me.</p>
       <div class="flex flex-wrap justify-center gap-3">
