@@ -30,11 +30,13 @@ const costs = [
     track: 'proposal-brev-gpu',
     linkLabel: 'H200 on NVIDIA Brev, Europe',
     amount: '6–7 USD / h ≈ 53–61k USD / year',
+    perMember: true,
     note: 'Conservative: solar only needs daylight runs, but a GPU is not reliably available on demand. Together we investigate the latency/price tradeoff, e.g. cheaper GPUs or daylight-only runs at slightly higher latency.',
   },
   {
     item: 'Storage (~16 GB / day, S3 standard)',
     amount: '< 1k USD in year one',
+    perMember: true,
   },
   { item: 'My work', amount: 'on request' },
 ];
@@ -139,15 +141,16 @@ const steps = [
             {costs.map((c) => (
               <tr class="border-b border-slate-700 last:border-0">
                 <td class="bg-slate-800 p-3 align-top text-gray-300">
-                  {c.href && !c.linkLabel ? (
-                    <a class="text-cyan-400 hover:text-cyan-300" href={c.href} target="_blank" rel="noopener noreferrer" data-goatcounter-click={c.track} data-goatcounter-title={`Proposal: ${c.item}`}>{c.item}</a>
-                  ) : c.item}
-                  {c.linkLabel && (
-                    <a class="ml-1 text-xs text-cyan-400 hover:text-cyan-300" href={c.href} target="_blank" rel="noopener noreferrer" data-goatcounter-click={c.track} data-goatcounter-title={`Proposal: ${c.linkLabel}`}>({c.linkLabel})</a>
-                  )}
+                  {c.item}
+                  {c.linkLabel && <span class="ml-1 text-xs text-gray-400">({c.linkLabel})</span>}
                   {c.note && <p class="mt-1 text-xs text-gray-400">{c.note}</p>}
                 </td>
-                <td class="whitespace-nowrap bg-slate-800 p-3 align-top font-medium text-gray-100">{c.amount}</td>
+                <td class="whitespace-nowrap bg-slate-800 p-3 align-top font-medium text-gray-100">
+                  {c.href ? (
+                    <a class="text-cyan-400 hover:text-cyan-300" href={c.href} target="_blank" rel="noopener noreferrer" data-goatcounter-click={c.track} data-goatcounter-title={`Proposal: ${c.item}`}>{c.amount}</a>
+                  ) : c.amount}
+                  {c.perMember && <p class="text-xs font-normal text-gray-400">per member</p>}
+                </td>
               </tr>
             ))}
           </tbody>
