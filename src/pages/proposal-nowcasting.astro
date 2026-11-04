@@ -38,8 +38,8 @@ const costs = [
 ];
 
 const steps = [
-  { title: 'Discuss', text: 'A call with you and your tech lead: which decisions would a better nowcast change?' },
-  { title: 'Test offline', text: 'Measure the benefit on 17 days of existing demo data against your current forecasts.' },
+  { title: 'Discuss', text: 'A call with tech and business leads about the potential impact of low-latency high-resolution nowcasts.' },
+  { title: 'Test offline', text: 'Measure the benefit on 17 days of existing demo data against your existing weather forecasts.' },
   { title: 'Run live for 2 weeks', text: 'Operational nowcasts on new satellite data, delivered to your systems.' },
   { title: 'Go to production', text: 'Hardened pipeline with monitoring, running in your cloud.' },
 ];
@@ -59,7 +59,7 @@ const steps = [
     <p class="mt-4 text-gray-300">
       AI nowcasts of solar output for the next hours, at 10-minute and 2 km
       resolution, built from EUMETSAT satellite data with NVIDIA Earth-2
-      StormscopeEU. I set it up and run it for your business.
+      StormscopeEU. I set it up in your cloud.
     </p>
 
     <div class="mt-6 grid gap-4 sm:grid-cols-3">
@@ -73,16 +73,35 @@ const steps = [
 
     <section class="mt-10">
       <h2 class="text-xl font-semibold text-gray-100">What's new</h2>
-      <ul class="mt-3 list-disc space-y-2 pl-5 text-gray-300">
-        <li><strong class="text-gray-100">10-minute temporal and 2 km spatial resolution</strong>, from satellite observations rather than hourly NWP runs.</li>
-        <li><strong class="text-gray-100">About 10 minutes latency</strong> from satellite image to forecast.</li>
-        <li><strong class="text-gray-100">Weighted by solar capacity</strong>: your own fleet, or the whole market's installed capacity.</li>
-      </ul>
+      <p class="mt-3 text-gray-300"><strong class="text-gray-100">10 minutes latency</strong> from satellite image to forecast, at <strong class="text-gray-100">10-minute and 2 km resolution</strong>, compared to numerical weather predictions lagged by 6 hours at 1-hour resolution.</p>
+      <!-- The dashboard lays out at a fixed 1920x1080; show only its map panel (x 24-1356, y 100-928). -->
+      <div id="nowcast-crop" class="relative mt-4 overflow-hidden rounded-lg border border-slate-700" style="aspect-ratio: 1332 / 828;">
+        <iframe
+          src="https://nvidia-gtc-berlin-2026.earthmover.io/?variable=true_color"
+          title="StormscopeEU live nowcast viewer"
+          loading="lazy"
+          width="1920"
+          height="1080"
+          class="absolute left-0 top-0 origin-top-left border-0"
+          style="width: 1920px; height: 1080px; transform: scale(var(--s, 0.5)) translate(-24px, -100px);"
+        ></iframe>
+      </div>
+      <script>
+        const crop = document.getElementById('nowcast-crop');
+        if (crop) {
+          const fit = () => crop.style.setProperty('--s', String(crop.clientWidth / 1332));
+          new ResizeObserver(fit).observe(crop);
+          fit();
+        }
+      </script>
+      <p class="mt-1 text-xs text-gray-400">
+        Live StormscopeEU nowcast over Europe.
+        <a class="text-cyan-400 hover:text-cyan-300" href="https://nvidia-gtc-berlin-2026.earthmover.io/?variable=true_color" target="_blank" rel="noopener noreferrer">Open full screen</a>
+      </p>
       <p class="mt-3 text-sm text-gray-400">
         Background:
-        <a class="text-cyan-400 hover:text-cyan-300" href="https://www.earthmover.io/blog/building-a-low-latency-earth-2-nowcasting-pipeline-with-earthmover" target="_blank" rel="noopener noreferrer">nowcasting pipeline</a>,
-        <a class="text-cyan-400 hover:text-cyan-300" href="https://nvidia-gtc-berlin-2026.earthmover.io/" target="_blank" rel="noopener noreferrer">live demo</a>,
-        <a class="text-cyan-400 hover:text-cyan-300" href="https://blogs.nvidia.com/blog/europe-earth-2-open-models-weather-climate-prediction/" target="_blank" rel="noopener noreferrer">NVIDIA blog</a>.
+        <a class="text-cyan-400 hover:text-cyan-300" href="https://www.earthmover.io/blog/building-a-low-latency-earth-2-nowcasting-pipeline-with-earthmover" target="_blank" rel="noopener noreferrer">Blog post</a>,
+        <a class="text-cyan-400 hover:text-cyan-300" href="https://nvidia-gtc-berlin-2026.earthmover.io/" target="_blank" rel="noopener noreferrer">live demo</a>.
       </p>
     </section>
 
@@ -115,9 +134,10 @@ const steps = [
       <h2 class="text-xl font-semibold text-gray-100">Benefit</h2>
       <p class="mt-3 text-gray-300">
         The value depends on your portfolio and the decisions you make with it,
-        so let's find it out together. We start offline with
-        <a class="text-cyan-400 hover:text-cyan-300" href="https://app.earthmover.io/gtc-berlin/stormscope-eu_gtc_berlin_2026_EU_region" target="_blank" rel="noopener noreferrer">17 days of demo data</a>
-        over Europe, with no commitment and no integration work on your side.
+        so let's find it out together.
+        Outputs for
+        <a class="text-cyan-400 hover:text-cyan-300" href="https://app.earthmover.io/gtc-berlin/stormscope-eu_gtc_berlin_2026_EU_region" target="_blank" rel="noopener noreferrer">17 demo days</a>
+        are available.
       </p>
     </section>
 
@@ -140,13 +160,13 @@ const steps = [
       <h2 class="text-sm font-semibold uppercase tracking-wider text-cyan-400">A hypothetical</h2>
       <p class="mt-2 text-gray-300">
         If the setup costs are too high for you: what would you pay per month
-        if I set up a company selling this nowcast data as a feed?
+        if I set up a company selling this nowcast data?
       </p>
     </section>
 
     <section class="mt-10 flex flex-col items-center gap-4 rounded-xl bg-slate-800 px-6 py-10 text-center">
       <h2 class="text-2xl font-bold text-white">Let's talk</h2>
-      <p class="text-gray-400">Share this with your tech lead and book a call with me.</p>
+      <p class="text-gray-400">Share this internally and book a call with me.</p>
       <div class="flex flex-wrap justify-center gap-3">
         <a
           href="mailto:draaronspring@proton.me?subject=Solar%20nowcasting%20proposal"
