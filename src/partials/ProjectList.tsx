@@ -99,6 +99,10 @@ const ProjectList = () => (
             label: 'Running open AI weather models',
             href: 'https://www.earthmover.io/blog/making-open-source-ai-weather-forecasting-models-easy-to-run',
           },
+          {
+            label: 'Proposal',
+            href: '/proposal-nowcasting/',
+          },
         ]}
       />
       <ProjectCard
