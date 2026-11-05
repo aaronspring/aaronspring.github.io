@@ -16,5 +16,8 @@ export default defineConfig({
       theme: 'monokai',
     },
   },
-  integrations: [react(), tailwind({}), sitemap(), robotsTxt()],
+  integrations: [react(), tailwind({}), sitemap({
+      // noindex pages stay out of the sitemap too.
+      filter: (page) => !/\/(impressum|datenschutz)\/$/.test(page),
+    }), robotsTxt()],
 });

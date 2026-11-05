@@ -8,9 +8,33 @@ import { AppConfig } from '@/utils/AppConfig';
 
 const { title } = AppConfig;
 const { description } = AppConfig;
+
+const person = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: AppConfig.author,
+  url: Astro.site?.href,
+  image: new URL('/assets/images/profile.jpeg', Astro.site).href,
+  jobTitle: AppConfig.job_title,
+  description,
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Hamburg',
+    addressCountry: 'DE',
+  },
+  sameAs: AppConfig.same_as,
+  knowsAbout: [
+    'Geospatial data engineering',
+    'Climate data',
+    'ERA5',
+    'Machine learning',
+    'AI engineering',
+    'Agentic AI systems',
+  ],
+};
 ---
 
-<Base head={{ title, description }}>
+<Base head={{ title, description }} jsonLd={person}>
   <Hero />
   <div id="value">
     <ValueProp />
