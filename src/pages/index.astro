@@ -10,7 +10,6 @@ const { title } = AppConfig;
 const { description } = AppConfig;
 
 const person = {
-  '@context': 'https://schema.org',
   '@type': 'Person',
   name: AppConfig.author,
   url: Astro.site?.href,
@@ -32,9 +31,18 @@ const person = {
     'Agentic AI systems',
   ],
 };
+
+// ProfilePage is a type Google's Rich Results Test recognises; the Person
+// it wraps is what search engines attach to Aaron's name.
+const profilePage = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfilePage',
+  url: Astro.site?.href,
+  mainEntity: person,
+};
 ---
 
-<Base head={{ title, description }} jsonLd={person}>
+<Base head={{ title, description }} jsonLd={profilePage}>
   <Hero />
   <div id="value">
     <ValueProp />
