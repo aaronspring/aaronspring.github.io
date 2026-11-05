@@ -9,10 +9,12 @@ export interface Props {
     title: string;
     description: string;
   };
+  hideNav?: boolean;
 }
 
 const {
   head: { title, description },
+  hideNav = false,
 } = Astro.props as Props;
 ---
 
@@ -67,7 +69,7 @@ const {
             async src="//gc.zgo.at/count.js"></script>
   </head>
   <body class='bg-slate-900 text-gray-100'>
-    <Navbar />
+    {!hideNav && <Navbar />}
 
     <slot></slot>
 
