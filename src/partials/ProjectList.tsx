@@ -53,21 +53,44 @@ const ProjectList = () => (
                 reaching users&apos; phones with 10 minutes latency
               </li>
               <li>
+                Create AI weather forecasts with models like{' '}
                 <a
                   className="text-cyan-400 hover:text-cyan-300"
                   href="https://huggingface.co/spaces/hugging-science/ai-weather-models-with-earthmover-data"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  ECMWF AIFS or WeatherNext2
+                  ECMWF AIFS
                 </a>{' '}
-                run from Earthmover initial conditions in under 30 seconds
+                with Earthmover initial conditions in a cloud-native pipeline in
+                under 30 seconds
               </li>
             </ul>
           </>
         }
         win="Own the lowest-latency forecasts for a competitive edge in energy markets."
-        collaboration="NVIDIA Earth-2, Earthmover and Hugging Face."
+        collaboration={
+          <>
+            <a
+              className="text-cyan-400 hover:text-cyan-300"
+              href="https://blogs.nvidia.com/blog/europe-earth-2-open-models-weather-climate-prediction/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              NVIDIA Earth-2
+            </a>
+            , Earthmover and{' '}
+            <a
+              className="text-cyan-400 hover:text-cyan-300"
+              href="https://huggingface.co/blog/hugging-science/earthmover-hf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Hugging Face
+            </a>
+            .
+          </>
+        }
         img={{
           src: '/assets/images/project-weather-renewables.svg',
           alt: 'Satellite feeding an AI weather forecast for wind and solar',
@@ -84,16 +107,8 @@ const ProjectList = () => (
         ]}
         links={[
           {
-            label: 'NVIDIA blog',
-            href: 'https://blogs.nvidia.com/blog/europe-earth-2-open-models-weather-climate-prediction/',
-          },
-          {
             label: 'Nowcasting pipeline',
             href: 'https://www.earthmover.io/blog/building-a-low-latency-earth-2-nowcasting-pipeline-with-earthmover',
-          },
-          {
-            label: 'Hugging Face blog',
-            href: 'https://huggingface.co/blog/hugging-science/earthmover-hf',
           },
           {
             label: 'Running open AI weather models',

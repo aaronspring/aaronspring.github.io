@@ -13,7 +13,7 @@ type Props = {
   img: { src: string; alt: string };
   tags: string[];
   links?: LinkEntry[];
-  collaboration?: string;
+  collaboration?: ReactNode;
 };
 
 const ProjectCard = ({
