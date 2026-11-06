@@ -53,16 +53,16 @@ const ProjectList = () => (
                 reaching users&apos; phones with 10 minutes latency
               </li>
               <li>
-                Create AI weather forecasts with models like{' '}
+                Create{' '}
                 <a
                   className="text-cyan-400 hover:text-cyan-300"
                   href="https://huggingface.co/spaces/hugging-science/ai-weather-models-with-earthmover-data"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  ECMWF AIFS
+                  your own AI weather forecasts
                 </a>{' '}
-                with Earthmover initial conditions in a cloud-native pipeline in
+                with models like ECMWF AIFS with Earthmover initial conditions in a cloud-native pipeline in
                 under 30 seconds
               </li>
             </ul>
