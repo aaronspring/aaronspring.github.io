@@ -34,15 +34,15 @@ const Hero = () => (
               deployed system
             </li>
             <li>
-              Historical user data &rarr; predict behaviour with classical{' '}
+              Historical user data &rarr; predict behavior with classical{' '}
               <a className={link} href="/#value-ml">machine learning</a>
             </li>
           </ul>
           <p className="mt-4">
             10 years building data systems, from climate research at the{' '}
             <a className={link} href="/work/">Max Planck Institute</a> (with{' '}
-            <a className={link} href="/work/">WMO</a> and{' '}
-            <a className={link} href="/work/">ECMWF</a>) to production ML at{' '}
+            <a className={link} href="/work/#wmo">WMO</a> and{' '}
+            <a className={link} href="/work/#wmo">ECMWF</a>) to production ML at{' '}
             <a className={link} href="/work/">XING</a>. Today I&rsquo;m a
             trusted freelance partner for startups like{' '}
             <a className={link} href="/work/">Earthmover</a>, collaborating

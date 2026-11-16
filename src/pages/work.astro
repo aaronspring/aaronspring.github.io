@@ -11,7 +11,7 @@ const workEntries = [
     location: 'Remote',
     bullets: [
       'Architect and build low-latency pipelines bringing AI-based weather forecasts from satellite to users’ phones in collaboration with NVIDIA and Hugging Face',
-      'Own the AWS pipeline of an analysis-ready, cloud-optimised, daily-updating dual-chunked ERA5 data cube (500TB + 20GB/day) for the Earthmover marketplace',
+      'Own the AWS pipeline of an analysis-ready, cloud-optimized, daily-updating dual-chunked ERA5 data cube (500TB + 20GB/day) for the Earthmover marketplace',
     ],
   },
   {
@@ -22,7 +22,7 @@ const workEntries = [
     location: 'Hamburg',
     bullets: [
       'Developed end-to-end LLM-powered recruiting agent from concept to production with RAG retrieval, reranking, prompting, tracing and guardrails',
-      'Reduced recruiter review load by narrowing 20M profiles to 200 prescreened, then 10 interested applicants per posting via personalised outreach',
+      'Reduced recruiter review load by narrowing 20M profiles to 200 prescreened, then 10 interested applicants per posting via personalized outreach',
     ],
   },
   {
@@ -33,7 +33,7 @@ const workEntries = [
     location: 'Hamburg',
     bullets: [
       'Migrated ad CTR prediction from logistic regression to a deep neural network as calibrated recommender system, delivering 2% RPI uplift for a €14M business',
-      'Feature engineering for personalisation of CTR prediction and A/B testing',
+      'Feature engineering for personalization of CTR prediction and A/B testing',
       'Developed LLM-powered ad copy improvement reaching 10% adoption within three months and improving CTR by 15%',
     ],
   },
@@ -48,6 +48,7 @@ const workEntries = [
     ],
   },
   {
+    id: 'wmo',
     company: 'World Meteorological Organization',
     role: 'Data Engineer (part-time)',
     dateStart: 'Apr 2021',
@@ -65,7 +66,7 @@ const workEntries = [
     dateEnd: 'Apr 2021',
     location: 'Hamburg',
     bullets: [
-      'Orchestrated Earth-System-Model simulations and analysed a 40TB+ data cube',
+      'Orchestrated Earth-System-Model simulations and analyzed a 40TB+ data cube',
       'Established forecasting skill verification by maintaining climpred',
       'Published three peer-reviewed first-author papers',
     ],
@@ -97,7 +98,7 @@ const skills = [
     </div>
     <div class="flex flex-col gap-6">
       {workEntries.map((entry) => (
-        <div class="rounded-lg border border-slate-700 bg-slate-800 p-6">
+        <div id={entry.id} class="scroll-mt-20 rounded-lg border border-slate-700 bg-slate-800 p-6">
           <div class="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
             <div>
               <h2 class="text-lg font-semibold text-gray-100">{entry.company}</h2>
