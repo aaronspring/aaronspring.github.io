@@ -33,7 +33,7 @@ const tagKinds: Record<string, TagKindValue> = {
   Retrieval: TagKind.SKILL,
   Embeddings: TagKind.SKILL,
   'Fine-tuning': TagKind.SKILL,
-  Personalisation: TagKind.SKILL,
+  Personalization: TagKind.SKILL,
   'Data Curation': TagKind.SKILL,
   'Data Labeling': TagKind.SKILL,
   ARCO: TagKind.SKILL,

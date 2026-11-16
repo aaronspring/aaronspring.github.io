@@ -150,7 +150,7 @@ const ProjectList = () => (
         id="arco-era5"
         name="ARCO ERA5"
         challenge="Efficiently access the best up-to-date climate reanalysis."
-        solution="Analysis-ready cloud-optimised (ARCO) ERA5 on Earthmover Arraylake, dual-chunked for map and time-series access, with Icechunk ACID transactions and an SLA on freshness updating daily."
+        solution="Analysis-ready cloud-optimized (ARCO) ERA5 on Earthmover Arraylake, dual-chunked for map and time-series access, with Icechunk ACID transactions and an SLA on freshness updating daily."
         win="Customers can subscribe to a ready-to-use ERA5 dataset. Time-series and map queries execute in under 3 seconds."
         img={{
           src: '/assets/images/project-climate-cloud.svg',
@@ -206,16 +206,16 @@ const ProjectList = () => (
           'Data Labeling',
           'metaflow',
           'Snowflake',
-          'Personalisation',
+          'Personalization',
           'Python',
           'Scala',
         ]}
       />
       <ProjectCard
-        id="ad-personalisation"
-        name="Ad Personalisation"
+        id="ad-personalization"
+        name="Ad Personalization"
         challenge="Maximize revenue per impression by ranking ads by relevance for the user."
-        solution="Upgraded from logistic regression to a deep neural network enabling ad-user personalisation."
+        solution="Upgraded from logistic regression to a deep neural network enabling ad-user personalization."
         win="Improved click-through-rate by 10–15% and revenue-per-impression by 2% in production."
         img={{
           src: '/assets/images/project-ad-personalization.svg',
@@ -223,7 +223,7 @@ const ProjectList = () => (
         }}
         tags={[
           'Ad Tech',
-          'Personalisation',
+          'Personalization',
           'ML',
           'scikit-learn',
           'mlflow',
@@ -239,7 +239,7 @@ const ProjectList = () => (
         id="s2s-forecast-challenge"
         name="S2S Forecast Challenge"
         challenge="Run a Kaggle-style challenge for sub-seasonal climate forecasts with low entry barriers"
-        solution="Curated training datasets and a verification pipeline based on git-lfs and renku notebooks for forecast submissions automatically evaluated on standardised metrics."
+        solution="Curated training datasets and a verification pipeline based on git-lfs and renku notebooks for forecast submissions automatically evaluated on standardized metrics."
         collaboration="Swiss Data Science Center (SDSC), World Meteorological Organization (WMO) and European Centre for Medium-Range Weather Forecasts (ECMWF)."
         img={{
           src: '/assets/images/project-climate-forecast.svg',

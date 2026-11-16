@@ -6,9 +6,9 @@ const valueSections = [
     role: 'Geospatial Cloud Data Engineer',
     bullets: [
       'Identify datasets for cloud-based workflows in climate risk and energy domains',
-      'Build analysis-ready, cloud-optimised (ARCO) climate datasets with inherent safety, consistency and reproducibility',
+      'Build analysis-ready, cloud-optimized (ARCO) climate datasets with inherent safety, consistency and reproducibility',
       'Orchestrate scheduled geospatial cloud pipelines',
-      'Optimise storage, chunking, throughput and cost',
+      'Optimize storage, chunking, throughput and cost',
     ],
     projects: [
       {
@@ -45,7 +45,7 @@ const valueSections = [
       'Train models for automated decision-making',
       'Deploy and monitor models',
     ],
-    projects: [{ name: 'Ad Personalisation', href: '#ad-personalisation' }],
+    projects: [{ name: 'Ad Personalization', href: '#ad-personalization' }],
   },
 ];
 

@@ -2,9 +2,9 @@ export const AppConfig = {
   site_name: 'Aaron Spring',
   title: 'Aaron Spring',
   description:
-    'I turn data and AI ideas into products that hold up in production. Freelance geospatial data, AI and ML engineer in Hamburg.',
+    'I help data teams ship low-latency geospatial data products. Freelance geospatial cloud data engineer in Hamburg, also working on AI and ML systems.',
   author: 'Aaron Spring',
-  job_title: 'Freelance Geospatial Data, AI and ML Engineer',
+  job_title: 'Freelance Geospatial Cloud Data Engineer',
   same_as: [
     'https://www.linkedin.com/in/springaaron/',
     'https://github.com/aaronspring',

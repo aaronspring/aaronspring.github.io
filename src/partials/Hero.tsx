@@ -18,29 +18,38 @@ const Hero = () => (
       }
       description={
         <>
-          I turn data and AI ideas into production-ready products:
-          <ul className="mt-2 list-disc list-inside">
+          <p className="text-xl font-semibold text-gray-100">
+            I help data teams ship low-latency{' '}
+            <a className={link} href="/#value-geospatial">geospatial data products</a>.
+          </p>
+          <ul className="mt-4 list-disc list-inside">
             <li>
-              Messy{' '}
+              Terabyte-scale{' '}
               <a className={link} href="/#value-geospatial">climate data</a>{' '}
-              &rarr; analysis-ready and effective to query
+              &rarr; analysis-ready, cloud-optimized for fast queries
             </li>
             <li>
-              An <a className={link} href="/#value-ai">AI idea</a> &rarr;
-              verifiable prototype to deployed system
+              A generative idea &rarr; verifiable{' '}
+              <a className={link} href="/#value-ai">GenAI</a> prototype to
+              deployed system
             </li>
             <li>
-              Historical user data &rarr; predict behaviour with classical{' '}
+              Historical user data &rarr; predict behavior with classical{' '}
               <a className={link} href="/#value-ml">machine learning</a>
             </li>
           </ul>
-          <p className="mt-2">
-            <a className={link} href="/work/">9+ years</a> experience with{' '}
-            <a className={link} href="/#tag=Weather">geospatial data</a>,{' '}
-            <a className={link} href="/#tag=LLM">LLM</a> and{' '}
-            <a className={link} href="/#tag=ML">ML</a> systems at scale.
+          <p className="mt-4">
+            10 years building data systems, from climate research at the{' '}
+            <a className={link} href="/work/">Max Planck Institute</a> (with{' '}
+            <a className={link} href="/work/#wmo">WMO</a> and{' '}
+            <a className={link} href="/work/#wmo">ECMWF</a>) to production ML at{' '}
+            <a className={link} href="/work/">XING</a>. Today I&rsquo;m a
+            trusted freelance partner for startups like{' '}
+            <a className={link} href="/work/">Earthmover</a>, collaborating
+            with <a className={link} href="/work/">Hugging Face</a> and{' '}
+            <a className={link} href="/work/">NVIDIA</a>.
           </p>
-          <p className="mt-2">
+          <p className="mt-4">
             Freelancer based in Hamburg, Germany {' '}
             <a className={link} href="/#contact" aria-label="Get in touch">
               <span aria-hidden="true">&#x2709;&#xFE0F;</span>
