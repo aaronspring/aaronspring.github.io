@@ -5,13 +5,13 @@ import { AppConfig } from '@/utils/AppConfig';
 const workEntries = [
   {
     company: 'Freelance',
-    role: 'Geospatial Cloud Data Engineer · ML Engineer · AI Engineer',
-    dateStart: 'May 2026',
+    role: 'Geospatial Cloud Data Engineer',
+    dateStart: 'Jun 2026',
     dateEnd: 'Present',
+    location: 'Remote',
     bullets: [
-      'Geospatial data engineering and analysis-ready cloud-optimised dataset pipelines',
-      'Production ML system design and deployment',
-      'LLM / AI engineering and agentic systems',
+      'Architect and build low-latency pipelines bringing AI-based weather forecasts from satellite to users’ phones in collaboration with NVIDIA and Hugging Face',
+      'Own the AWS pipeline of an analysis-ready, cloud-optimised, daily-updating dual-chunked ERA5 data cube (500TB + 20GB/day) for the Earthmover marketplace',
     ],
   },
   {
@@ -19,6 +19,7 @@ const workEntries = [
     role: 'Data Scientist — AI Engineer',
     dateStart: 'Mar 2025',
     dateEnd: 'Mar 2026',
+    location: 'Hamburg',
     bullets: [
       'Developed end-to-end LLM-powered recruiting agent from concept to production with RAG retrieval, reranking, prompting, tracing and guardrails',
       'Reduced recruiter review load by narrowing 20M profiles to 200 prescreened, then 10 interested applicants per posting via personalised outreach',
@@ -26,35 +27,64 @@ const workEntries = [
   },
   {
     company: 'New Work SE (XING Marketing Solutions)',
-    role: 'ML Engineer',
-    dateStart: 'Apr 2023',
-    dateEnd: 'Mar 2025',
+    role: 'Data Scientist — Machine Learning Engineer',
+    dateStart: 'Jan 2023',
+    dateEnd: 'Feb 2025',
+    location: 'Hamburg',
     bullets: [
-      'Replaced logistic regression baseline with deep neural network for ad targeting, achieving 10–15% CTR improvement',
-      'Shipped LLM ad copy generation pipeline integrated into the production ad stack',
-      'Built user-level personalisation features with custom embeddings',
+      'Migrated ad CTR prediction from logistic regression to a deep neural network as calibrated recommender system, delivering 2% RPI uplift for a €14M business',
+      'Feature engineering for personalisation of CTR prediction and A/B testing',
+      'Developed LLM-powered ad copy improvement reaching 10% adoption within three months and improving CTR by 15%',
     ],
   },
   {
     company: 'Max-Planck-Institut für Meteorologie',
-    role: 'PostDoc Researcher',
-    dateStart: 'Jan 2021',
-    dateEnd: 'Mar 2023',
+    role: 'PostDoc',
+    dateStart: 'May 2021',
+    dateEnd: 'Jan 2023',
+    location: 'Hamburg',
     bullets: [
-      'Analysed COVID-19 lockdown effects on atmospheric CO₂ using observational and model data',
+      'Disentangled the COVID-19 response from variability in atmospheric CO₂',
+    ],
+  },
+  {
+    company: 'World Meteorological Organization',
+    role: 'Data Engineer (part-time)',
+    dateStart: 'Apr 2021',
+    dateEnd: 'Feb 2022',
+    location: 'Remote',
+    bullets: [
+      'Hosted the <a class="text-cyan-400 hover:text-cyan-300" href="https://s2s-ai-challenge.github.io/">S2S AI Challenge</a> improving subseasonal weather predictions with machine learning, with 50 participants',
+      'Architected data pipeline on renkulab.io for 5TB+ of forecast data',
     ],
   },
   {
     company: 'Max-Planck-Institut für Meteorologie',
-    role: 'PhD Researcher',
-    dateStart: 'Jan 2018',
-    dateEnd: 'Dec 2020',
+    role: 'PhD Candidate',
+    dateStart: 'Mar 2018',
+    dateEnd: 'Apr 2021',
+    location: 'Hamburg',
     bullets: [
-      'Developed decadal climate prediction system processing 40TB+ ensemble datasets',
-      'Created climpred, an open-source Python library for probabilistic forecast verification',
-      'Published 3 first-author peer-reviewed papers in high-impact climate journals',
+      'Orchestrated Earth-System-Model simulations and analysed a 40TB+ data cube',
+      'Established forecasting skill verification by maintaining climpred',
+      'Published three peer-reviewed first-author papers',
     ],
   },
+];
+
+const education = [
+  { degree: 'Dr. rer. nat.', school: 'Max-Planck-Institut für Meteorologie, Hamburg', dates: 'Mar 2018 – Apr 2021', grade: '1.1' },
+  { degree: 'MSc Physics', school: 'Ruprecht-Karls-Universität Heidelberg', dates: 'Sep 2014 – Aug 2017', grade: '1.3' },
+  { degree: 'BSc Physics', school: 'Ruprecht-Karls-Universität Heidelberg', dates: 'Sep 2010 – Feb 2014', grade: '1.8' },
+];
+
+const skills = [
+  { label: 'Languages', items: 'Python, SQL, Scala, Bash' },
+  { label: 'GeoOps', items: 'xarray, dask, numpy, geopandas, icechunk, zarr, netCDF, GRIB, parquet, shapefiles' },
+  { label: 'Data Science', items: 'pandas, TensorFlow, PyTorch, scikit-learn, MLflow, Metaflow, Snowflake, Spark, Airflow' },
+  { label: 'DevOps', items: 'CI/CD, TDD, EDD, GitHub Actions, git, Docker, FastAPI, REST, AWS' },
+  { label: 'LLMOps', items: 'LangChain, Qdrant, Langfuse, sentence-transformers, pydantic, skills/MCP, Claude' },
+  { label: 'Spoken', items: 'German (native), English (C1), French (B1)' },
 ];
 ---
 
@@ -74,15 +104,40 @@ const workEntries = [
               <p class="text-sm italic text-cyan-400">{entry.role}</p>
             </div>
             <p class="shrink-0 text-sm text-gray-400">
-              {entry.dateStart} – {entry.dateEnd}
+              {entry.dateStart} – {entry.dateEnd} · {entry.location}
             </p>
           </div>
           <ul class="mt-3 list-disc space-y-1 pl-5 text-sm text-gray-300">
-            {entry.bullets.map((b) => <li>{b}</li>)}
+            {entry.bullets.map((b) => <li set:html={b}></li>)}
           </ul>
         </div>
       ))}
     </div>
+
+    <h2 class="mb-4 mt-10 text-2xl font-bold text-white">Education</h2>
+    <div class="flex flex-col gap-3 rounded-lg border border-slate-700 bg-slate-800 p-6">
+      {education.map((e) => (
+        <div class="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
+          <p class="text-gray-100">
+            <span class="font-semibold">{e.degree}</span>
+            <span class="text-gray-300">, {e.school}</span>
+            <span class="text-sm text-gray-400"> (Grade {e.grade})</span>
+          </p>
+          <p class="shrink-0 text-sm text-gray-400">{e.dates}</p>
+        </div>
+      ))}
+    </div>
+
+    <h2 class="mb-4 mt-10 text-2xl font-bold text-white">Skills</h2>
+    <dl class="grid grid-cols-1 gap-x-6 gap-y-2 rounded-lg border border-slate-700 bg-slate-800 p-6 text-sm sm:grid-cols-[9rem_1fr]">
+      {skills.map((s) => (
+        <Fragment>
+          <dt class="font-semibold text-cyan-400">{s.label}</dt>
+          <dd class="mb-2 text-gray-300 sm:mb-0">{s.items}</dd>
+        </Fragment>
+      ))}
+    </dl>
+
     <div class="mt-10 flex justify-center">
       <a
         href="/cv_aaron_spring_2026.pdf"
