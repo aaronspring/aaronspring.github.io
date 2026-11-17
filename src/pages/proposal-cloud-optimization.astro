@@ -20,8 +20,7 @@ const examples = [
       { item: 'Compute', before: '7k', after: '5k' },
       { item: 'Total', before: '20k', after: '11k', strong: true },
     ],
-    note: 'Discuss how query time converts to business value.',
-    outro: 'That is 9k USD saved every month, about 108k USD per year. My fee is a few months of these savings, agreed before we start. Everything after that stays with you.',
+    outro: 'That is 9k USD saved every month, about 108k USD per year. My fee is a few months of these savings. Everything after that stays with you.',
   },
   {
     title: 'Spend more, earn more',
@@ -32,12 +31,13 @@ const examples = [
       { item: 'Time-series query (seconds)', before: '300', after: '2' },
       { item: 'Business value (USD / month)', before: '30k', after: '90k', strong: true },
     ],
+    note: 'Discuss how query time converts to business value.',
     outro: 'Storage doubles, but time-series queries are 150x faster. Instantaneous results unlock interactive use, so the business value triples: 8k USD more storage per month buys 60k USD more value per month.',
   },
 ];
 
 const steps = [
-  { title: 'Onboarding workshop (1k EUR)', text: 'Walk through your data, workloads and cloud bills. Agree on the baseline and the metrics above.' },
+  { title: 'Onboarding workshop (1k USD)', text: 'Walk through your data, workloads and cloud bills. Agree on the baseline and the metrics above.' },
   { title: 'Audit', text: 'Measure baseline costs and query times per dataset and workload. Rank the potential savings by effort.' },
   { title: 'Optimize', text: 'Rechunk and restructure data, move workloads, and tune compute together with your team.' },
   { title: 'Measure and settle', text: 'Compare the monthly bills against the baseline. My fee follows the measured savings.' },
@@ -106,7 +106,7 @@ const steps = [
       <h2 class="text-xl font-semibold text-gray-100">Pricing</h2>
       <ul class="mt-2 list-disc space-y-1 pl-5 text-gray-300">
         <li>
-          <strong class="text-gray-100">Onboarding workshop:</strong> 1k EUR,
+          <strong class="text-gray-100">Onboarding workshop:</strong> 1k USD,
           paid upfront.
         </li>
         <li>
@@ -173,7 +173,7 @@ const steps = [
 
     <section id="proposal-end" class="mx-auto mt-10 flex w-fit max-w-full flex-col items-center gap-2 rounded-xl bg-slate-800 px-8 py-6 text-center">
       <h2 class="text-2xl font-bold text-white">Let's talk</h2>
-      <p class="text-gray-400">Share this internally and book a call with me.</p>
+      <p class="text-gray-400">Share this internally and get in touch.</p>
       <div class="mt-1 flex gap-4">
         <a
           href="https://www.linkedin.com/in/springaaron/"
@@ -199,21 +199,7 @@ const steps = [
     </section>
 
     <script>
-      const track = (path: string, title: string) => {
-        const gc = (window as any).goatcounter;
-        if (gc && gc.count) gc.count({ path, title, event: true });
-      };
-      const trackSeen = (id: string, path: string, title: string) => {
-        const section = document.getElementById(id);
-        if (!section) return;
-        const io = new IntersectionObserver((entries) => {
-          if (entries.some((e) => e.isIntersecting)) {
-            io.disconnect();
-            track(path, title);
-          }
-        });
-        io.observe(section);
-      };
+      import { trackSeen } from '@/utils/track';
       trackSeen('pricing', 'cloudopt-read-to-pricing', 'Cloud proposal: Scrolled to pricing');
       trackSeen('proposal-end', 'cloudopt-read-to-end', 'Cloud proposal: Scrolled to contact');
     </script>
