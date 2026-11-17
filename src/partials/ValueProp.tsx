@@ -13,7 +13,12 @@ const valueSections = [
           proposal &raquo;
         </a>
       </>,
-      'Optimize storage, chunking, throughput and cost',
+      <>
+        Optimize storage, chunking, throughput and cloud cost
+        <a className="ml-4 font-medium text-cyan-400 hover:text-cyan-300" href="/proposal-cloud-optimization/">
+          proposal &raquo;
+        </a>
+      </>,
     ],
     projects: [
       {
