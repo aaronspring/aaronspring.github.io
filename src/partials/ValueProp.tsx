@@ -8,11 +8,10 @@ const valueSections = [
       'Identify datasets for cloud-based workflows in climate risk and energy domains',
       'Build analysis-ready, cloud-optimized (ARCO) climate datasets with inherent safety, consistency and reproducibility',
       <>
-        Build low-latency AI forecasting pipelines (
+        Build low-latency AI forecasting pipelines &raquo;{' '}
         <a className="text-cyan-400 hover:text-cyan-300" href="/proposal-nowcasting/">
           nowcasting proposal
         </a>
-        )
       </>,
       'Optimize storage, chunking, throughput and cost',
     ],
