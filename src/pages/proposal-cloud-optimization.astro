@@ -3,10 +3,10 @@ import Base from '@/templates/Base.astro';
 import { AppConfig } from '@/utils/AppConfig';
 
 const metrics = [
-  { name: 'Storage', unit: 'USD / month', text: 'Chunking, compression, deduplication and storage tiers.' },
-  { name: 'Egress', unit: 'USD / month', text: 'Where data lives versus where it is read, caching and region choice.' },
-  { name: 'Compute', unit: 'USD / month', text: 'Right-sized clusters, fewer bytes read per query, spot instances.' },
-  { name: 'Query time', unit: 'seconds', text: 'Map and time-series access patterns your users and models actually run.' },
+  { name: 'Storage', unit: 'USD / month' },
+  { name: 'Egress', unit: 'USD / month' },
+  { name: 'Compute', unit: 'USD / month' },
+  { name: 'Query time', unit: 'seconds' },
 ];
 
 const example = [
@@ -59,13 +59,11 @@ const steps = [
     </p>
 
     <h2 class="mt-6 text-xl font-semibold text-gray-100">What to optimize</h2>
-    <div class="mt-3 grid gap-4 sm:grid-cols-2">
+    <div class="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-4">
       {metrics.map((m) => (
-        <div class="rounded-lg border border-slate-700 bg-slate-800 p-4">
-          <h3 class="text-sm font-semibold text-gray-100">
-            {m.name} <span class="font-normal text-gray-400">({m.unit})</span>
-          </h3>
-          <p class="mt-1 text-sm text-gray-400">{m.text}</p>
+        <div class="rounded-lg border border-slate-700 bg-slate-800 px-3 py-2">
+          <h3 class="text-sm font-semibold text-gray-100">{m.name}</h3>
+          <p class="text-xs text-gray-400">{m.unit}</p>
         </div>
       ))}
     </div>
