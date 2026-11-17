@@ -8,8 +8,8 @@ const valueSections = [
       'Identify datasets for cloud-based workflows in climate risk and energy domains',
       'Build analysis-ready, cloud-optimized (ARCO) climate datasets with inherent safety, consistency and reproducibility',
       <>
-        Build low-latency AI forecasting pipelines{' '}
-        <a className="text-cyan-400 hover:text-cyan-300" href="/proposal-nowcasting/">
+        Build low-latency AI forecasting pipelines
+        <a className="ml-4 text-cyan-400 hover:text-cyan-300" href="/proposal-nowcasting/">
           proposal &raquo;
         </a>
       </>,
