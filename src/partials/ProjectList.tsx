@@ -53,6 +53,18 @@ const ProjectList = () => (
                 reaching users&apos; phones with 10 minutes latency
               </li>
               <li>
+                <a
+                  className="text-cyan-400 hover:text-cyan-300"
+                  href="https://github.com/earthmover-support/sc26-chicago-stormscope_us-booth"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  StormscopeUS nowcasting
+                </a>{' '}
+                from GOES satellite data, reaching users&apos; phones in 90
+                seconds
+              </li>
+              <li>
                 Create{' '}
                 <a
                   className="text-cyan-400 hover:text-cyan-300"
@@ -79,7 +91,16 @@ const ProjectList = () => (
             >
               NVIDIA Earth-2
             </a>
-            , Earthmover and{' '}
+            ,{' '}
+            <a
+              className="text-cyan-400 hover:text-cyan-300"
+              href="https://www.earthmover.io"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Earthmover
+            </a>{' '}
+            and{' '}
             <a
               className="text-cyan-400 hover:text-cyan-300"
               href="https://huggingface.co/blog/hugging-science/earthmover-hf"
