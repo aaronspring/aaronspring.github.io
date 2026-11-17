@@ -1,0 +1,207 @@
+---
+import Base from '@/templates/Base.astro';
+import { AppConfig } from '@/utils/AppConfig';
+
+const metrics = [
+  { name: 'Storage', unit: 'USD / month' },
+  { name: 'Egress', unit: 'USD / month' },
+  { name: 'Compute', unit: 'USD / month' },
+  { name: 'Query time', unit: 'seconds' },
+];
+
+const examples = [
+  {
+    title: 'Cut costs',
+    intro: 'Hypothetical numbers, in USD per month:',
+    header: 'Cost',
+    rows: [
+      { item: 'Storage', before: '8k', after: '4k' },
+      { item: 'Egress', before: '5k', after: '2k' },
+      { item: 'Compute', before: '7k', after: '5k' },
+      { item: 'Total', before: '20k', after: '11k', strong: true },
+    ],
+    outro: 'That is 9k USD saved every month, about 108k USD per year. My fee is a few months of these savings. Everything after that stays with you.',
+  },
+  {
+    title: 'Spend more, earn more',
+    intro: 'Dual chunking: the same data chunked for both map and time-series access. Hypothetical numbers:',
+    header: 'Metric',
+    rows: [
+      { item: 'Storage (USD / month)', before: '8k', after: '16k' },
+      { item: 'Time-series query (seconds)', before: '300', after: '2' },
+      { item: 'Business value (USD / month)', before: '30k', after: '90k', strong: true },
+    ],
+    note: 'Discuss how query time converts to business value.',
+    outro: 'Storage doubles, but time-series queries are 150x faster. Instantaneous results unlock interactive use, so the business value triples: 8k USD more storage per month buys 60k USD more value per month.',
+  },
+];
+
+const steps = [
+  { title: 'Onboarding workshop (1k USD)', text: 'Walk through your data, workloads and cloud bills. Agree on the baseline and the metrics above.' },
+  { title: 'Audit', text: 'Measure baseline costs and query times per dataset and workload. Rank the potential savings by effort.' },
+  { title: 'Optimize', text: 'Rechunk and restructure data, move workloads, and tune compute together with your team.' },
+  { title: 'Measure and settle', text: 'Compare the monthly bills against the baseline. My fee follows the measured savings.' },
+];
+---
+
+<Base
+  head={{
+    title: `Proposal: Cloud Cost Optimization | ${AppConfig.title}`,
+    description: 'Proposal: holistic analysis and optimization of storage, egress, compute and query times for weather and climate data in the cloud, priced on measured savings.',
+  }}
+  hideNav
+>
+  <div class="mx-auto max-w-screen-md px-3 py-6">
+    <p class="text-xs font-semibold uppercase tracking-wider text-cyan-400">Proposal</p>
+    <h1 class="mt-2 text-3xl font-bold text-white">
+      Cloud cost optimization for weather and climate data
+    </h1>
+    <p class="mt-4 text-gray-300">
+      Getting started with weather and climate data in the cloud is easy: free
+      credits from commercial cloud providers (AWS, GCP, Cloudflare),
+      <a class="text-cyan-400 hover:text-cyan-300" href="https://www.coiled.io/" target="_blank" rel="noopener noreferrer" data-goatcounter-click="cloudopt-coiled" data-goatcounter-title="Cloud proposal: Coiled">Coiled</a>
+      for managed compute,
+      <a class="text-cyan-400 hover:text-cyan-300" href="https://www.earthmover.io/" target="_blank" rel="noopener noreferrer" data-goatcounter-click="cloudopt-arraylake" data-goatcounter-title="Cloud proposal: Earthmover Arraylake">Earthmover Arraylake</a>
+      for data management, and the
+      <a class="text-cyan-400 hover:text-cyan-300" href="https://app.earthmover.io/marketplace" target="_blank" rel="noopener noreferrer" data-goatcounter-click="cloudopt-marketplace" data-goatcounter-title="Cloud proposal: Earthmover marketplace">Earthmover marketplace</a>
+      for open and paid
+      datasets.
+    </p>
+    <p class="mt-3 text-gray-300">
+      Cloud storage and compute scale easily. Soon, cloud costs for storage,
+      compute and egress
+      <strong class="text-gray-100">start scaling too</strong>.
+    </p>
+    <p class="mt-3 text-gray-300">
+      I offer a holistic analysis and optimization of your use cases for
+      <strong class="text-gray-100">total cost of ownership</strong>: how data
+      is stored, chunked, moved and queried, not just one line on the bill. For
+      what format choices alone can change, see Earthmover's
+      <a class="text-cyan-400 hover:text-cyan-300" href="https://www.earthmover.io/blog/weather-forecast-data-icechunk-vs-iceberg" target="_blank" rel="noopener noreferrer" data-goatcounter-click="cloudopt-icechunk-iceberg" data-goatcounter-title="Cloud proposal: Icechunk vs Iceberg blog">Icechunk vs Iceberg comparison for weather forecast data</a>.
+    </p>
+
+    <h2 class="mt-6 text-xl font-semibold text-gray-100">What to optimize</h2>
+    <div class="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-4">
+      {metrics.map((m) => (
+        <div class="rounded-lg border border-slate-700 bg-slate-800 px-3 py-2">
+          <h3 class="text-sm font-semibold text-gray-100">{m.name}</h3>
+          <p class="text-xs text-gray-400">{m.unit}</p>
+        </div>
+      ))}
+    </div>
+
+    <section class="mt-10">
+      <h2 class="text-xl font-semibold text-gray-100">Track record</h2>
+      <ul class="mt-3 list-disc space-y-1 pl-5 text-gray-300">
+        <li>
+          <a class="text-cyan-400 hover:text-cyan-300" href="/#arco-era5" data-goatcounter-click="cloudopt-arco-era5" data-goatcounter-title="Cloud proposal: ARCO ERA5">ARCO ERA5</a>:
+          dual-chunked for map and time-series access, with map and
+          time-series queries in under 3 seconds.
+        </li>
+        <li>Consulting a climate risk startup from Berlin on its cloud climate data.</li>
+      </ul>
+    </section>
+
+    <section id="pricing" class="mt-10 rounded-lg border border-slate-700 bg-slate-800 p-4">
+      <h2 class="text-xl font-semibold text-gray-100">Pricing</h2>
+      <ul class="mt-2 list-disc space-y-1 pl-5 text-gray-300">
+        <li>
+          <strong class="text-gray-100">Onboarding workshop:</strong> 1k USD,
+          paid upfront.
+        </li>
+        <li>
+          <strong class="text-gray-100">Optimization:</strong> outcome-based,
+          tied to the measured savings against your baseline. No savings, no
+          fee.
+        </li>
+      </ul>
+    </section>
+
+    <section class="mt-10">
+      <h2 class="text-xl font-semibold text-gray-100">Illustrative examples</h2>
+      {examples.map((ex) => (
+        <div class="mt-4">
+          <h3 class="text-lg font-semibold text-gray-100">{ex.title}</h3>
+          <p class="mt-2 text-gray-300">{ex.intro}</p>
+          <div class="mt-3 overflow-x-auto rounded-lg border border-slate-700">
+            <table class="w-full text-left text-sm">
+              <thead>
+                <tr class="border-b border-slate-700 bg-slate-800 text-gray-400">
+                  <th class="p-3 font-medium">{ex.header}</th>
+                  <th class="p-3 text-right font-medium">Before</th>
+                  <th class="p-3 text-right font-medium">After</th>
+                </tr>
+              </thead>
+              <tbody>
+                {ex.rows.map((r) => (
+                  <tr class={`border-b border-slate-700 last:border-0 bg-slate-800 ${r.strong ? 'font-semibold text-gray-100' : 'text-gray-300'}`}>
+                    <td class="p-3">{r.item}</td>
+                    <td class="p-3 text-right">{r.before}</td>
+                    <td class="p-3 text-right">{r.after}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          {ex.note && <p class="mt-1 text-xs text-gray-400">{ex.note}</p>}
+          <p class="mt-3 text-gray-300">{ex.outro}</p>
+        </div>
+      ))}
+    </section>
+
+    <section class="mt-10">
+      <h2 class="text-xl font-semibold text-gray-100">Project milestones</h2>
+      <ol class="mt-3 space-y-3">
+        {steps.map((s, i) => (
+          <li class="flex gap-3">
+            <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-cyan-500 text-sm font-semibold text-[#fff]">{i + 1}</span>
+            <div>
+              <p class="font-medium text-gray-100">{s.title}</p>
+              <p class="text-sm text-gray-400">{s.text}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </section>
+
+    <section class="mt-10 rounded-lg border border-slate-700 bg-slate-800 p-4">
+      <p class="text-gray-300">
+        What is your monthly cloud bill for weather and climate data today, and
+        do you know which datasets and workloads drive it?
+      </p>
+    </section>
+
+    <section id="proposal-end" class="mx-auto mt-10 flex w-fit max-w-full flex-col items-center gap-2 rounded-xl bg-slate-800 px-8 py-6 text-center">
+      <h2 class="text-2xl font-bold text-white">Let's talk</h2>
+      <p class="text-gray-400">Share this internally and get in touch.</p>
+      <div class="mt-1 flex gap-4">
+        <a
+          href="https://www.linkedin.com/in/springaaron/"
+          target="_blank"
+          rel="noopener noreferrer"
+          data-goatcounter-click="cloudopt-linkedin"
+          data-goatcounter-title="Cloud proposal: LinkedIn"
+        >
+          <img class="h-10 w-10 hover:translate-y-1" src="/assets/images/linkedin-icon.png" alt="LinkedIn" loading="lazy" />
+        </a>
+        <a
+          href="mailto:draaronspring@proton.me?subject=Cloud%20cost%20optimization%20proposal"
+          aria-label="Email"
+          data-goatcounter-click="cloudopt-email"
+          data-goatcounter-title="Cloud proposal: Email"
+        >
+          <svg class="h-10 w-10 stroke-cyan-500 hover:translate-y-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="4" width="20" height="16" rx="2" />
+            <path d="M2 7l10 7 10-7" />
+          </svg>
+        </a>
+      </div>
+    </section>
+
+    <script>
+      import { trackSeen } from '@/utils/track';
+      trackSeen('pricing', 'cloudopt-read-to-pricing', 'Cloud proposal: Scrolled to pricing');
+      trackSeen('proposal-end', 'cloudopt-read-to-end', 'Cloud proposal: Scrolled to contact');
+    </script>
+  </div>
+</Base>

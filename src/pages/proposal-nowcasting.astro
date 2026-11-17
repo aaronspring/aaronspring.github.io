@@ -109,17 +109,13 @@ const steps = [
         ></iframe>
       </div>
       <script>
+        import { track, trackSeen } from '@/utils/track';
         const crop = document.getElementById('nowcast-crop');
         if (crop) {
           const fit = () => crop.style.setProperty('--s', String(crop.clientWidth / 1332));
           new ResizeObserver(fit).observe(crop);
           fit();
         }
-        // GoatCounter events the click attributes cannot capture.
-        const track = (path: string, title: string) => {
-          const gc = (window as any).goatcounter;
-          if (gc && gc.count) gc.count({ path, title, event: true });
-        };
         // Clicking into the cross-origin map iframe moves focus out of this
         // window: count the first interaction with the live map.
         let mapUsed = false;
@@ -129,18 +125,6 @@ const steps = [
             track('proposal-map-interact', 'Proposal: Interacted with demo map');
           }
         });
-        // Count readers who scroll down to a section, once per page view.
-        const trackSeen = (id: string, path: string, title: string) => {
-          const section = document.getElementById(id);
-          if (!section) return;
-          const io = new IntersectionObserver((entries) => {
-            if (entries.some((e) => e.isIntersecting)) {
-              io.disconnect();
-              track(path, title);
-            }
-          });
-          io.observe(section);
-        };
         trackSeen('costs', 'proposal-read-to-costs', 'Proposal: Scrolled to costs');
         trackSeen('proposal-end', 'proposal-read-to-end', 'Proposal: Scrolled to contact');
       </script>
@@ -237,7 +221,7 @@ const steps = [
 
     <section id="proposal-end" class="mx-auto mt-10 flex w-fit max-w-full flex-col items-center gap-2 rounded-xl bg-slate-800 px-8 py-6 text-center">
       <h2 class="text-2xl font-bold text-white">Let's talk</h2>
-      <p class="text-gray-400">Share this internally and book a call with me.</p>
+      <p class="text-gray-400">Share this internally and get in touch.</p>
       <div class="mt-1 flex gap-4">
         <a
           href="https://www.linkedin.com/in/springaaron/"

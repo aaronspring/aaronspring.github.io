@@ -13,7 +13,12 @@ const valueSections = [
           proposal &raquo;
         </a>
       </>,
-      'Optimize storage, chunking, throughput and cost',
+      <>
+        Optimize storage, chunking, throughput and cloud cost
+        <a className="ml-4 font-medium text-cyan-400 hover:text-cyan-300" href="/proposal-cloud-optimization/">
+          proposal &raquo;
+        </a>
+      </>,
     ],
     projects: [
       {
@@ -71,8 +76,8 @@ const ValueProp = () => (
         >
           <h2 className="text-lg font-semibold text-cyan-400">{section.role}</h2>
           <ul className="mt-3 list-disc space-y-1 pl-5 text-sm text-gray-300">
-            {section.bullets.map((b) => (
-              <li>{b}</li>
+            {section.bullets.map((b, i) => (
+              <li key={i}>{b}</li>
             ))}
           </ul>
           <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-1">
