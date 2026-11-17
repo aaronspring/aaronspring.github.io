@@ -5,13 +5,13 @@ import { AppConfig } from '@/utils/AppConfig';
 const workEntries = [
   {
     company: 'Freelance',
-    role: 'Geospatial Cloud Data Engineer',
     dateStart: 'Jun 2026',
     dateEnd: 'Present',
     location: 'Remote',
     bullets: [
-      'Architect and build low-latency pipelines bringing AI-based weather forecasts from satellite to users’ phones (90 s from GOES, 10 min from EUMETSAT) in collaboration with NVIDIA and Hugging Face',
+      'Architect and build low-latency pipelines bringing AI-based weather forecasts from satellite to users’ phones (90 s from GOES, 10 min from EUMETSAT) in collaboration with <a class="text-cyan-400 hover:text-cyan-300" href="https://www.earthmover.io/blog/building-a-low-latency-earth-2-nowcasting-pipeline-with-earthmover">NVIDIA</a> and <a class="text-cyan-400 hover:text-cyan-300" href="https://huggingface.co/blog/hugging-science/earthmover-hf">Hugging Face</a>',
       'Own the AWS pipeline of an analysis-ready, cloud-optimized, daily-updating dual-chunked ERA5 data cube (500TB + 20GB/day) for the Earthmover marketplace',
+      'Run 2-day hands-on <a class="text-cyan-400 hover:text-cyan-300" href="/#ai-product-engineering-workshops">AI trainings</a> on working effectively with coding agents for <a class="text-cyan-400 hover:text-cyan-300" href="https://www.hackersandwizards.dev/trainings/agentic-engineering-for-developers/">Hackers &amp; Wizards</a>',
     ],
   },
   {
@@ -69,6 +69,7 @@ const workEntries = [
       'Orchestrated Earth-System-Model simulations and analyzed a 40TB+ data cube',
       'Established forecasting skill verification by maintaining climpred',
       'Published three peer-reviewed first-author papers',
+      'PhD thesis: <a class="text-cyan-400 hover:text-cyan-300" href="https://pure.mpg.de/rest/items/item_3289580/component/file_3325415/content">Internal Variability and Potential Predictability of the Global Carbon Cycle in a Perfect-Model Framework</a> (PDF)',
     ],
   },
 ];
@@ -102,7 +103,7 @@ const skills = [
           <div class="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
             <div>
               <h2 class="text-lg font-semibold text-gray-100">{entry.company}</h2>
-              <p class="text-sm italic text-cyan-400">{entry.role}</p>
+              {entry.role && <p class="text-sm italic text-cyan-400">{entry.role}</p>}
             </div>
             <p class="shrink-0 text-sm text-gray-400">
               {entry.dateStart} – {entry.dateEnd} · {entry.location}
